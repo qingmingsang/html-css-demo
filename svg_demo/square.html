@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='zh'>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="">
+		<style>
+			html,
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				list-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Begin an SVG figure and declare our namespace -->
+		<svg xmlns="http://www.w3.org/2000/svg" 
+			viewBox="0 0 1000 1000"> <!-- Coordinate system for figure -->
+			<defs> <!-- Set up some definitions we'll use -->
+				<linearGradient id="fade"> <!-- a color gradient named "fade" -->
+					<stop offset="0%" stop-color="#008"/> <!-- Start a dark blue -->
+					<stop offset="100%" stop-color="#ccf"/> <!-- Fade to light blue -->
+				</linearGradient>
+			</defs>
+			<!-- Draw a rectangle with a thick black border and fill it with the fade -->
+			<rect x="100" y="200" width="800" height="600"
+				stroke="black" stroke-width="25" fill="url(#fade)"/>
+		</svg>
+	</body>
+
+</html>

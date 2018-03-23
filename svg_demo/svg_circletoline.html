@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				background: lightslategray;
+			}
+			
+			.svg-area {
+				margin-top: 100px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 800px;
+				height: 500px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="svg-area">
+			<svg id="ser-svg" width="100%" height="100%">
+						<!--<circle r="170" cx="300" cy="246"  stroke="rgba(255, 255, 255, 0.2)" stroke-width="4" fill="none"/>-->
+						<!--<circle r="170" cx="500" cy="246"  stroke="rgba(255, 255, 255, 0.2)" stroke-width="4" fill="none"/>-->
+						<path style="stroke-dasharray: 1069, 1071; stroke-dashoffset: 1070;" id="bc1" d="M130,246A170,170 0,1,1 470,246A170,170 0,1,1 130,246" stroke="rgba(255, 255, 255, 0.2)" stroke-width="4" fill="none"></path>
+						<g opacity="0">
+							<path style="stroke-dasharray: 63, 65; stroke-dashoffset: 64;" d="M-10,0A10,10 0,1,1 10,0A10,10 0,1,1 -10,0" fill="#fff"></path>
+							<text x="0" y="-30" text-anchor="middle" font-family="Microsoft YaHei" font-size="20px" fill="#f0eded">
+								海贼王
+							</text>
+							<animateMotion dur="9s" begin="1s" fill="freeze" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#bc1"></mpath>
+							</animateMotion>
+							<animate attributeName="opacity" from="0" to="1" begin="1s" dur="100ms" fill="freeze"></animate>
+						</g>
+						<g opacity="0">
+							<path style="stroke-dasharray: 63, 65; stroke-dashoffset: 64;" d="M-10,0A10,10 0,1,1 10,0A10,10 0,1,1 -10,0" fill="#fff"></path>
+							<text x="0" y="-30" text-anchor="middle" font-family="Microsoft YaHei" font-size="20px" fill="#f0eded">
+								一拳超人
+							</text>
+							<animateMotion dur="9s" begin="4s" fill="freeze" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#bc1"></mpath>
+							</animateMotion>
+							<animate attributeName="opacity" from="0" to="1" begin="4s" dur="100ms" fill="freeze"></animate>
+						</g>
+						<g opacity="0">
+							<path style="stroke-dasharray: 63, 65; stroke-dashoffset: 64;" d="M-10,0A10,10 0,1,1 10,0A10,10 0,1,1 -10,0" fill="#fff"></path>
+							<text x="0" y="-30" text-anchor="middle" font-family="Microsoft YaHei" font-size="20px" fill="#f0eded">
+								东京食尸鬼
+							</text>
+							<animateMotion dur="9s" begin="7s" fill="freeze" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#bc1"></mpath>
+							</animateMotion>
+							<animate attributeName="opacity" from="0" to="1" begin="7s" dur="100ms" fill="freeze"></animate>
+						</g>
+
+						<path style="stroke-dasharray: 1069, 1071; stroke-dashoffset: 1070;" id="bc2" d="M330,246A170,170 0,1,1 670,246A170,170 0,1,1 330,246" stroke="rgba(255, 255, 255, 0.2)" stroke-width="4" fill="none"></path>
+						<g opacity="0">
+							<path style="stroke-dasharray: 63, 65; stroke-dashoffset: 64;" d="M-10,0A10,10 0,1,1 10,0A10,10 0,1,1 -10,0" fill="#fff"></path>
+							<text x="0" y="-30" text-anchor="middle" font-family="Microsoft YaHei" font-size="20px" fill="#f0eded">
+								进击的巨人
+							</text>
+							<animateMotion dur="9s" begin="0s" fill="freeze" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#bc2"></mpath>
+							</animateMotion>
+							<animate attributeName="opacity" from="0" to="1" begin="0s" dur="100ms" fill="freeze"></animate>
+						</g>
+						<g opacity="0">
+							<path style="stroke-dasharray: 63, 65; stroke-dashoffset: 64;" d="M-10,0A10,10 0,1,1 10,0A10,10 0,1,1 -10,0" fill="#fff"></path>
+							<text x="0" y="-30" text-anchor="middle" font-family="Microsoft YaHei" font-size="20px" fill="#f0eded">
+								死亡笔记
+							</text>
+							<animateMotion dur="9s" begin="3s" fill="freeze" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#bc2"></mpath>
+							</animateMotion>
+							<animate attributeName="opacity" from="0" to="1" begin="3s" dur="100ms" fill="freeze"></animate>
+						</g>
+						<g opacity="0">
+							<path style="stroke-dasharray: 63, 65; stroke-dashoffset: 64;" d="M-10,0A10,10 0,1,1 10,0A10,10 0,1,1 -10,0" fill="#fff"></path>
+							<text x="0" y="-30" text-anchor="middle" font-family="Microsoft YaHei" font-size="20px" fill="#f0eded">
+								叛逆的鲁鲁修
+							</text>
+							<animateMotion dur="9s" begin="6s" fill="freeze" repeatCount="indefinite" rotate="auto">
+								<mpath xlink:href="#bc2"></mpath>
+							</animateMotion>
+							<animate attributeName="opacity" from="0" to="1" begin="6s" dur="100ms" fill="freeze"></animate>
+						</g>
+
+					</svg>
+		</div>
+		<script src="vivus.js"></script>
+		<script>
+			window.serTwoSvg = new Vivus('ser-svg', {
+				duration: 100
+			}, function() {});
+		</script>
+	</body>
+
+</html>
