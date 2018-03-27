@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .one {
+        width: 100px;
+        height: 50px;
+        box-shadow: 1px 1px 1px 1px;
+        margin: 50px;
+      }
+
+      .two {
+        background: lavenderblush;
+      }
+
+      .three {
+        color: lightblue;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id='box'>
+
+    </div>
+    <script>
+      window.onload = function () {
+        let box = document.getElementById('box');
+        let tpl = '';
+        let t = performance.timing;
+        for (let i = 0; i < 20000; i++) {
+          tpl += `<div class="one">div<p class="two">p</p><span class="three">span</span><i></i><em></em></div>`;
+        }
+        box.innerHTML = tpl;
+        setTimeout(function () {
+          //console.log(t)
+          console.log(t.loadEventEnd - t.responseEnd)
+        }, 0);
+      };
+
+    </script>
+  </body>
+
+</html>
