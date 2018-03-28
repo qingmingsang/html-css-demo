@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>shadowDOM</title>
+    <style type="text/css">
+      #div {
+        width: 300px;
+        height: 50px;
+        border: 1px solid #666;
+        padding: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="div">该浏览器不支持shadow dom</div>
+    <button>click</button>
+    <script>
+      function createShadowDOM(elem) {
+        var root = elem.createShadowRoot();
+        root.appendChild(createStyle());
+        root.appendChild(createInputDiv("姓名", "name"));
+      }
+
+      function createStyle() {
+        var style = document.createElement('style');
+        style.textContent = 'div.input-div { height: 30px; width: 250px; }' +
+          'font.input-font { line-height: 30px;font-size: 16px;color: #495A80; margin-right: 10px;}' +
+          'span.input-area {width: 200px;height: 25px;line-height: 25px;padding-left: 5px;display:inline-block;color: #666;font-size: 16px;border: 1px solid #999;border-radius: 3px;}';
+        return style;
+      }
+
+      function createInputDiv(font, name) {
+        var inputDiv = document.createElement('div');
+        inputDiv.className = 'input-div';
+        inputDiv.innerHTML = "<font class='input-font'>" + font + "</font><span class='input-area' contentEditable='true' id=" + name + "></span>";
+        return inputDiv;
+      }
+
+      createShadowDOM(document.querySelector("#div"));
+
+      document.querySelector('button').addEventListener('click', function () {
+        console.log(document.querySelector('#div').shadowRoot.querySelector('#name').innerHTML);
+      })
+    </script>
+  </body>
+
+</html>
