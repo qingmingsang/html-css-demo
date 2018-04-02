@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <title></title>
+    <style>
+      div {
+        margin: 50px auto;
+        width: 200px;
+        height: 200px;
+        background-image: url('http://images2015.cnblogs.com/blog/608782/201609/608782-20160926101029078-1479229145.jpg');
+        position: relative;
+      }
+
+      div:before {
+        content: "";
+        background-image: inherit;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: -100%;
+        transform: rotateX(180deg);
+      }
+
+      div:after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom: -200px;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1)0%, rgba(255, 255, 255, 0)100%);
+        z-index: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <script>
+
+    </script>
+  </body>
+
+</html>

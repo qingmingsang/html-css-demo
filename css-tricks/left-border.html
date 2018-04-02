@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            div {
+                position: relative;
+                width: 200px;
+                height: 60px;
+                line-height: 60px;
+                margin: 20px;
+                background: #ddd;
+                text-align: center;
+            }
+
+            .border {
+                border-left: 5px solid deeppink;
+            }
+
+            .pesudo::after {
+                content: "";
+                width: 5px;
+                height: 60px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: deeppink;
+            }
+
+            .boxShadow {
+                margin-left: 25px;
+                box-shadow: -5px 0px 0 0 deeppink;
+            }
+
+            .insertBoxShadow {
+                box-shadow: inset 5px 0px 0 0 deeppink;
+            }
+
+            .filterDropShadow {
+                margin-left: 25px;
+                -webkit-filter: drop-shadow(-5px 0 0 deeppink);
+            }
+
+            .linearGradient {
+                background-image: linear-gradient(90deg, deeppink 0px, deeppink 5px, transparent 5px);
+            }
+
+            .outline {
+                margin-left: 25px;
+                height: 50px;
+                outline: 5px solid deeppink;
+            }
+
+            .outline:after {
+                position: absolute;
+                content: "outline实现";
+                top: -5px;
+                bottom: -5px;
+                right: -5px;
+                left: 0;
+                background: #ddd;
+            }
+
+            .scroll {
+                width: 205px;
+                background: deeppink;
+                overflow-y: scroll;
+            }
+
+            .scroll::-webkit-scrollbar {
+                width: 200px;
+                background-color: #ddd;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 1、使用 border -->
+        <div class="border">border实现</div>
+
+        <!-- 2、使用伪元素 -->
+        <div class="pesudo">伪元素实现</div>
+
+        <!-- 3、外 box-shadow -->
+        <div class="boxShadow">外 box-shadow 实现</div>
+
+        <!-- 4、内 box-shadow -->
+        <div class="insertBoxShadow">内 box-shadow 实现</div>
+
+        <!-- 5、drop-shadow -->
+        <div class="filterDropShadow">drop-shadow 实现</div>
+
+        <!-- 6、渐变 -->
+        <div class="linearGradient">线性渐变实现</div>
+
+        <!-- 7、outline -->
+        <div class="outline">outline实现</div>
+
+        <!-- 8、滚动条 -->
+        <div class="scroll"></div>
+        <script>
+
+        </script>
+    </body>
+
+</html>

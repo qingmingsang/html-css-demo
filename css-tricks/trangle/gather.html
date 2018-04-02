@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      html,
+      body,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none;
+      }
+
+      .wrap {
+        height: 100%;
+        width: 500px;
+        margin: 0 auto 50px auto;
+      }
+
+      .wrap>div {
+        float: left;
+        margin: 20px 50px 20px 0;
+      }
+
+      .top-arrow {
+        border-color: transparent transparent red transparent;
+        border-style: solid;
+        border-width: 10px;
+        height: 0;
+        width: 0;
+      }
+
+      .right-arrow {
+        margin-left: 4px;
+        border-color: transparent transparent transparent orange;
+        border-style: solid;
+        border-width: 10px;
+        height: 0;
+        width: 0;
+      }
+
+      .bottom-arrow {
+        margin-top: 4px;
+        border-color: yellow transparent transparent transparent;
+        border-style: solid;
+        border-width: 10px;
+        height: 0;
+        width: 0;
+      }
+
+      .left-arrow {
+        border-color: transparent green transparent transparent;
+        border-style: solid;
+        border-width: 10px;
+        height: 0;
+        width: 0;
+      }
+
+      .arrow {
+        width: 0;
+        height: 0;
+        font-size: 0;
+        border: solid 10px #000;
+      }
+
+      .arrow2 {
+        width: 0;
+        height: 0;
+        font-size: 0;
+        border: solid 10px;
+        border-color: #f00 #0f0 #00f #000;
+      }
+
+      .send {
+        position: relative;
+        width: 150px;
+        height: 35px;
+        background: #F8C301;
+        border-radius: 5px;
+        margin: 30px auto 0;
+      }
+
+      .send:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: -16px;
+        width: 0;
+        height: 0;
+        font-size: 0;
+        border: solid 8px;
+        border-color: #4D4948 #4D4948 #4D4948 #F8C301;
+      }
+
+      .send2 {
+        position: relative;
+        width: 150px;
+        height: 35px;
+        background: #F8C301;
+        border-radius: 5px;
+        margin: 30px auto 0;
+      }
+
+      .send2:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        right: -16px;
+        width: 0;
+        height: 0;
+        font-size: 0;
+        border: solid 8px;
+        border-color: transparent transparent transparent #F8C301;
+      }
+
+      .send3 {
+        position: relative;
+        width: 150px;
+        height: 35px;
+        background: lightblue;
+        border-radius: 5px;
+        margin: 30px auto 0;
+      }
+
+      .send3:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        bottom: -16px;
+        width: 0;
+        height: 0;
+        font-size: 0;
+        border: solid 8px;
+        border-color: lightblue transparent transparent lightblue;
+      }
+
+      .send4 {
+        position: relative;
+        width: 150px;
+        height: 35px;
+        background: lightblue;
+        border-radius: 5px;
+        margin: 30px auto 0;
+        border: 1px solid red;
+      }
+
+      .send4:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        bottom: -6px;
+        width: 10px;
+        height: 10px;
+        background-color: inherit;
+        -webkit-transform: skewY(-45deg);
+        transform: skewY(-45deg);
+        border-left: 1px solid red;
+        border-bottom: 1px solid red;
+        border-bottom-left-radius: 3px;
+      }
+
+      .six {
+        width: 50px;
+        height: 50px;
+        background-image: -webkit-radial-gradient(top left, transparent 70%, #ccc 70%);
+        background-image: radial-gradient(top left, transparent 70%, #ccc 70%);
+      }
+
+      .seven {
+        width: 50px;
+        height: 50px;
+        background-image: -webkit-radial-gradient(top right, transparent 50px, #ccc 50px);
+        background-image: radial-gradient(top right, transparent 50px, #ccc 50px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div>
+        <div class='top-arrow'></div>
+        <div class='right-arrow'></div>
+        <div class='bottom-arrow'></div>
+        <div class='left-arrow'></div>
+        <div class="arrow"></div>
+        <div class="arrow2"></div>
+      </div>
+      <div class="send">
+      </div>
+      <div class="send2">
+      </div>
+      <div class="send3">
+      </div>
+      <div class="send4">
+      </div>
+      <div class='six'></div>
+      <div class='seven'></div>
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>

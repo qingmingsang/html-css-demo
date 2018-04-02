@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      p {
+        position: relative;
+        display: inline-block;
+        padding: 1em;
+        margin: 2em;
+      }
+
+      p::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: skyblue;
+        transform: perspective(4px) rotateX(1deg);
+      }
+
+      p.tab::before {
+        border-radius: 10px 10px 0 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Trapezoid</p>
+
+    <p class="tab">Trapezoid tab</p>
+    <script>
+    </script>
+  </body>
+
+</html>

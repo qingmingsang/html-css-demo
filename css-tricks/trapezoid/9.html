@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .green {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        background: lightgreen;
+      }
+
+      .red {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: lightcoral;
+        transform: skew(-20deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="green">
+      <div class="red"></div>
+    </div>
+    <p id="text"></p>
+    <script>
+      let green = document.querySelector('.green');
+      let red = document.querySelector('.red');
+      let txt = document.getElementById('text');
+      let greenl = green.getBoundingClientRect().left;
+      let redl = red.getBoundingClientRect().left;
+      console.log(greenl, redl)
+
+      let h = 50, a = 20, s;
+      let d2r = Math.PI / 180;        // 用于将角度转换成弧度
+      s = h * Math.tan(a * d2r) / 2
+      console.log(s)
+      txt.innerHTML = `左上顶点间的距离为${s}`
+    </script>
+  </body>
+
+</html>

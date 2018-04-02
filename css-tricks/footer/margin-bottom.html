@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+
+            .wrapper {
+                background: lightblue;
+                min-height: 100%;
+                margin-bottom: -50px;
+                /* 等于footer的高度 */
+            }
+
+            .footer,
+            .push {
+                height: 50px;
+                background: lightcoral;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="push">占位</div>
+            1. 这个方法需要容器里有额外的占位元素（div.push）。
+            <br> 2. div.wrapper的margin-bottom需要和div.footer的-height值一样，注意是负height。
+        </div>
+        <div class="footer">footer</div>
+        <script>
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <title></title>
+    <style>
+      .one {
+        position: relative;
+        margin: 50px auto;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        border: 1px solid #333;
+        line-height: 120px;
+        text-indent: 5px;
+      }
+
+      .one::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        box-sizing: border-box;
+        border-bottom: 1px solid deeppink;
+        transform-origin: bottom center;
+        animation: slash 5s infinite ease;
+      }
+
+      @keyframes slash {
+        0% {
+          transform: rotateZ(0deg) scale(1);
+        }
+        30% {
+          transform: rotateZ(45deg) scale(1);
+        }
+        60% {
+          transform: rotateZ(45deg) scale(1.414);
+        }
+        100% {
+          transform: rotateZ(45deg) scale(1.414);
+        }
+      }
+
+      .two {
+        position: relative;
+        margin: 50px auto;
+        width: 100px;
+        height: 100px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #333;
+        line-height: 120px;
+        text-indent: 5px;
+        background: linear-gradient(45deg, transparent 49.5%, deeppink 49.5%, deeppink 50.5%, transparent 50.5%);
+      }
+
+      body {
+        background: #eee;
+      }
+
+      .three {
+        position: relative;
+        margin: 50px auto;
+        width: 100px;
+        height: 100px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 1px solid #333;
+        background: #fff;
+        line-height: 120px;
+        text-indent: 5px;
+      }
+
+      .three::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border: 49px solid transparent;
+        border-left: 49px solid deeppink;
+        border-bottom: 49px solid deeppink;
+        animation: slash2 6s infinite ease;
+      }
+
+      .three::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border: 48px solid transparent;
+        border-left: 48px solid #fff;
+        border-bottom: 48px solid #fff;
+        animation: slash3 6s infinite ease;
+      }
+
+      @keyframes slash2 {
+        0% {
+          -webkit-transform: translate(-50px);
+          transform: translate(-50px);
+        }
+        30% {
+          -webkit-transform: translate(0px);
+          transform: translate(0px);
+        }
+        100% {
+          -webkit-transform: translate(0px);
+          transform: translate(0px);
+        }
+      }
+
+      @keyframes slash3 {
+        0% {
+          -webkit-transform: translate(-100px);
+          transform: translate(-100px);
+        }
+        30% {
+          -webkit-transform: translate(-100px);
+          transform: translate(-100px);
+        }
+        60% {
+          -webkit-transform: translate(0px);
+          transform: translate(0px);
+        }
+        100% {
+          -webkit-transform: translate(0px);
+          transform: translate(0px);
+        }
+      }
+
+
+      .four {
+        position: relative;
+        margin: 50px auto;
+        width: 100px;
+        height: 100px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        background-color: deeppink;
+        line-height: 120px;
+        text-indent: 5px;
+      }
+
+      .four::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-clip-path: polygon(0 0, 0 100px, 100px 100px, 0 0);
+        background: #fff;
+        border: 1px solid #333;
+        -webkit-transform: translateX(-120px);
+        transform: translateX(-120px);
+        -webkit-animation: move 5s infinite linear;
+        animation: move 5s infinite linear;
+      }
+
+      .four::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-clip-path: polygon(100px 99px, 100px 0, 1px 0, 100px 99px);
+        background: #fff;
+        border: 1px solid #333;
+        -webkit-transform: translateX(120px);
+        transform: translateX(120px);
+        -webkit-animation: move 5s infinite linear;
+        animation: move 5s infinite linear;
+      }
+
+      @keyframes move {
+        40% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+        100% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <script>
+
+    </script>
+  </body>
+
+</html>

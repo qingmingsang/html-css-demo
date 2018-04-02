@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .triangle {
+        width: 30%;
+        padding-bottom: 21.27%;
+        /* = width / 1.41    正方形的对角线长度是约等于1.414*/
+        position: relative;
+        overflow: hidden;
+      }
+
+      .triangle:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0079C6;
+        transform-origin: 0 100%;
+        transform: rotate(45deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class='triangle'>
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>

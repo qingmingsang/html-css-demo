@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      body {
+        background: #1D1F20;
+        padding: 50px;
+      }
+
+      .btn {
+        transition: 0.25s;
+        position: relative;
+        display: inline-block;
+        padding: 15px 35px 15px 15px;
+        text-decoration: none;
+        color: #1D1F20;
+      }
+
+      .btn>span {
+        text-transform: uppercase;
+        font-family: 'Raleway', sans-serif;
+        position: relative;
+        z-index: 5;
+      }
+
+      .btn:first-child:after {
+        transform: skewX(-20deg);
+      }
+
+      .btn:last-child:before {
+        transform: skewX(-20deg);
+      }
+
+      .btn:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      .btn:before {
+        transition: 0.25s;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -9px;
+        bottom: 0;
+        width: 17px;
+        border-style: solid;
+        border-color: #fff;
+        background-color: #fff;
+        border-width: 1px 0 1px 1px;
+        z-index: 8;
+      }
+
+      .btn:after {
+        transition: 0.25s;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-style: solid;
+        border-color: #fff;
+        background-color: #fff;
+        border-width: 1px 1px 1px 0;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        color: #fff;
+      }
+
+      .btn:hover:before,
+      .btn:focus:before {
+        background-color: #1D1F20;
+      }
+
+      .btn:hover:after,
+      .btn:focus:after {
+        background-color: #1D1F20;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="btn-group">
+      <a href="#" class="btn">
+        <span>Button</span>
+      </a>
+      <a href="#" class="btn">
+        <span>Button</span>
+      </a>
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>

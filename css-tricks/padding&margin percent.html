@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            color: red;
+        }
+
+        img {
+            width: 50%;
+        }
+
+        #zero {
+            width: 50%;
+            background-color: lightblue;
+            height: 100px;
+        }
+
+        #one {
+            /* 父元素宽度的一半 */
+            width: 50%;
+            background-color: lightblue;
+            /*与width: 50%;的值保持一致，也就是相当于父元素宽度的一半。 */
+            /* padding-top 或是 padding-bootom 都可以 */
+            padding-bottom: 50%;
+        }
+
+        #two {
+            width: 50%;
+            background: url(http://qingmingsang.github.io/images/example.jpg) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            height: 100px;
+        }
+
+        #three {
+            width: 50%;
+            padding-top: 50%;
+            background: url(http://qingmingsang.github.io/images/example.jpg) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+
+        #four {
+            width: 50%;
+            background-color: lightblue;
+            /* 触发BFC消除margin折叠的问题 */
+            overflow: hidden;
+        }
+
+        #four:before {
+            content: '';
+            display: block;
+            /* margin 百分比相对父元素宽度计算 */
+            margin-top: 100%;
+        }
+
+        #five {
+            width: 50%;
+            background: url(http://qingmingsang.github.io/images/example.jpg) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            /* 触发BFC消除margin折叠的问题 */
+            overflow: hidden;
+        }
+
+        #five:before {
+            content: '';
+            display: block;
+            /* margin 百分比相对父元素宽度计算 */
+            margin-top: 100%;
+        }
+
+        #six {
+            height: 50%;
+            background-color: lightblue;
+            padding-left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <p>没有高度自适应</p>
+    <div id="zero"></div>
+    <p>高度自适应</p>
+    <div id="one"></div>
+    <p>img图片</p>
+    <img src="http://qingmingsang.github.io/images/example.jpg">
+    <p>没有高度自适应的背景图片</p>
+    <div id="two"></div>
+    <p>高度自适应的背景图片</p>
+    <div id="three"></div>
+    <p>在:before或者:after中才能用margin,不建议用margin，比较麻烦</p>
+    <div id="four"></div>
+    <p>用margin必须触发BFC消除margin collapse</p>
+    <div id="five"></div>
+    <p>padding/margin-left/right好像没什么卵用</p>
+    <div id="six"></div>
+    <script>
+
+    </script>
+</body>
+
+</html>

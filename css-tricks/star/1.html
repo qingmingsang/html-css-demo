@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            .rating {
+                font-size: 0;
+                display: table;
+            }
+
+            .rating>label {
+                color: #ddd;
+                float: right;
+            }
+
+            .rating>label:before {
+                padding: 5px;
+                font-size: 24px;
+                line-height: 1em;
+                display: inline-block;
+                content: "★";
+            }
+
+            .rating>input:checked~label,
+            .rating:not(:checked)>label:hover,
+            .rating:not(:checked)>label:hover~label {
+                color: #FFD700;
+            }
+
+            .rating>input:checked~label:hover,
+            .rating>label:hover~input:checked~label,
+            .rating>input:checked~label:hover~label {
+                opacity: 0.5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" hidden/>
+            <label for="star5"></label>
+            <input type="radio" id="star4" name="rating" value="4" hidden/>
+            <label for="star4"></label>
+            <input type="radio" id="star3" name="rating" value="3" hidden/>
+            <label for="star3"></label>
+            <input type="radio" id="star2" name="rating" value="2" hidden/>
+            <label for="star2"></label>
+            <input type="radio" id="star1" name="rating" value="1" hidden/>
+            <label for="star1"></label>
+        </div>
+        <script>
+
+        </script>
+    </body>
+
+</html>

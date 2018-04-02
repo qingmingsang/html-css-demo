@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .main {
+        height: 27px;
+        width: 174px;
+        overflow: hidden;
+        margin: 50px auto;
+        position: relative;
+        color: white;
+        padding: 5px 0 5px 10px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+      }
+
+      .trapezoid {
+        position: absolute;
+        width: 170px;
+        height: 23px;
+        top: 2px;
+        left: -8px;
+        background: linear-gradient(to right, #FFB64B 8px, #F86B41);
+        transform: skew(-30deg);
+        box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.20);
+        z-index: -1;
+      }
+
+      .triangle {
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        right: 4.6px;
+        top: 2px;
+        background: #F86B41;
+        z-index: -2;
+        transform: skew(20deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="trapezoid"></div>
+      <div class="triangle"></div>
+      hello world
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>

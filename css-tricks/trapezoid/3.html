@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      body {
+        padding: 50px;
+      }
+
+      nav {
+        position: relative;
+        z-index: 1;
+        white-space: nowrap;
+      }
+
+      nav a {
+        position: relative;
+        display: inline-block;
+        padding: 1.5em 1.5em 1em;
+        color: inherit;
+        text-decoration: none;
+        margin: 0 -7px;
+      }
+
+      nav a::before,
+      main {
+        border: .1em solid #aaa;
+      }
+
+      nav a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: .5em;
+        left: 0;
+        z-index: -1;
+        border-bottom: none;
+        border-radius: 10px 10px 0 0;
+        background: #ddd;
+        box-shadow: 0 2px hsla(0, 0%, 100%, .5) inset;
+        transform: perspective(5px) rotateX(2deg);
+        transform-origin: bottom;
+      }
+
+      nav.left a {
+        padding: 1.5em 2em 1em 1em;
+      }
+
+      nav.left a::before {
+        transform-origin: bottom left;
+      }
+
+      nav.right a {
+        padding: 1.5em 1em 1em 2em;
+      }
+
+      nav.right a::before {
+        transform-origin: bottom right;
+      }
+
+      nav a.selected {
+        z-index: 2;
+      }
+
+      nav a.selected::before {
+        margin-bottom: -1px;
+        border-top-width: 1px;
+      }
+
+      nav a.selected::before,
+      main {
+        background: #eee;
+      }
+
+      main {
+        display: block;
+        margin: -8px 0 30px -15px;
+        padding: 1em;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" class="selected">Projects</a>
+      <a href="#">About</a>
+    </nav>
+    <main>
+      Content area
+    </main>
+
+    <nav class="left">
+      <a href="#">Home</a>
+      <a href="#" class="selected">Projects</a>
+      <a href="#">About</a>
+    </nav>
+    <main>
+      Content area
+    </main>
+
+    <nav class="right">
+      <a href="#">Home</a>
+      <a href="#" class="selected">Projects</a>
+      <a href="#">About</a>
+    </nav>
+    <main>
+      Content area
+    </main>
+    <script>
+    </script>
+  </body>
+
+</html>

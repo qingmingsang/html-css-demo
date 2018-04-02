@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      div {
+        overflow: hidden;
+      }
+
+      .container {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+      }
+
+      .button {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+      }
+
+      .border:after {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: scale(0.5);
+        /*这里其实用-1px -1px效果更好，很可能被其他元素遮罩掉 */
+        transform-origin: 0 0;
+        border: 1px black solid;
+      }
+
+      .top:before {
+        content: '';
+        background: black;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scaleY(0.5);
+        transform-origin: top;
+      }
+
+      .bottom:after {
+        content: '';
+        background: black;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: scaleY(0.5);
+        transform-origin: bottom;
+      }
+
+      .left:before {
+        content: '';
+        background: black;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scaleX(0.5);
+        transform-origin: left;
+      }
+
+      .right:after {
+        content: '';
+        background: black;
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: scaleX(0.5);
+        transform-origin: right;
+      }
+
+      /* .onePeace {
+        color: #A5A5A5;
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          height: 100%;
+          border-style: solid;
+          border-width: 1px;
+          border-color: #CCCCCC;
+          pointer-events: none;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+          border-radius: 40px;
+          -webkit-border-radius: 40px;
+        }
+        @media (-webkit-min-device-pixel-ratio: 1.5),
+        (min-device-pixel-ratio: 1.5),
+        (min-resolution: 144dpi),
+        (min-resolution: 1.5dppx) {
+          &::after {
+            width: 200%;
+            height: 200%;
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+          }
+        }
+        @media (-webkit-device-pixel-ratio: 1.5) {
+          &::after {
+            width: 150%;
+            height: 150%;
+            -webkit-transform: scale(.6666);
+            transform: scale(.6666);
+          }
+        }
+        @media (-webkit-device-pixel-ratio: 3) {
+          &::after {
+            width: 300%;
+            height: 300%;
+            -webkit-transform: scale(.3333);
+            transform: scale(.3333);
+          }
+        }
+      } */
+
+      .son {
+        width: 100%;
+        height: 100%;
+        background: lightcoral;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .button2 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+        border-bottom: 10px solid lightcoral;
+        box-sizing: border-box;
+      }
+
+      .bottom2:after {
+        content: '';
+        background: black;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        transform: scaleY(0.5);
+        transform-origin: bottom;
+      }
+
+      .button3 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+        border: 1px solid lightcoral;
+        box-sizing: border-box;
+      }
+
+      .button3:before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        transform: scale(0.5);
+        transform-origin: 1px 1px;
+        border: 1px black solid;
+      }
+
+      .button4 {
+        width: 102px;
+        height: 102px;
+        background: lightblue;
+        position: relative;
+        border: 1px solid lightcoral;
+        box-sizing: border-box;
+      }
+
+      .button4:before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        transform: scale(0.5);
+        transform-origin: 1px 1px;
+        border: 1px black solid;
+      }
+
+      .button5 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+      }
+
+      .button5:before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        border: 1px black solid;
+        box-sizing: border-box;
+      }
+
+      .button6 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+        border: 1px white solid;
+        box-sizing: border-box;
+      }
+
+      .button6:before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        border: 1px black solid;
+        box-sizing: border-box;
+      }
+
+      .button8 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+        border: 1px lightcoral solid;
+        box-sizing: border-box;
+      }
+
+      .button8:before {
+        content: '';
+        width: calc(200% + 4px);
+        height: calc(200% + 4px);
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        border: 1px black solid;
+        box-sizing: border-box;
+      }
+
+      .button7 {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+        position: relative;
+      }
+
+      .button7:before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        border-left: 1px black solid;
+        box-sizing: border-box;
+      }
+
+      .boxx {
+        width: 100px;
+        height: 100px;
+        background: lightblue;
+      }
+
+      [brdr] {
+        position: relative;
+      }
+
+      [brdr]:after {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+      }
+
+      [brdr~="top"]:after {
+        border-top-color: black;
+      }
+
+      [brdr~="right"]:after {
+        border-right-color: black;
+      }
+
+      [brdr~="bottom"]:after {
+        border-bottom-color: black;
+      }
+
+      [brdr~="left"]:after {
+        border-left-color: black;
+      }
+
+      [brdr~="all"]:after {
+        border-color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    1px的border实际上是一条absolute的1px高缩小0.5倍的线。
+    <br> 如果放内部，可能会被其他absolute元素盖掉，这时候需要设置z-index，一般都放内部。
+    <br>如果放外部，需要设置border，并且1px所在元素颜色与外部背景色相似，因为会有0.5px的间隙，而且不能使用overflow:hidden，可谓缺点多多。
+    <p></p>
+    <div class='container'>
+      <div class='button border'>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='button top bottom'>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='button left right'></div>
+    </div>
+    <div class='container'>
+      <div class='button2 bottom2'>
+      </div>
+    </div>
+    <p>
+      加border唯一的好处是内部不会被遮罩到
+    </p>
+    <div class='container'>
+      <div class='button3'>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='button4'>
+      </div>
+    </div>
+    <p>
+      这个算是比较完美的方案了 ，只要父元素不加无谓的border
+    </p>
+    <div class='container'>
+      <div class='button5'>
+      </div>
+    </div>
+    <p>
+      如果加了border，效果没那么好，可以做一个讨巧的方式，就是将border的颜色设为背景色
+    </p>
+    <div class='container'>
+      <div class='button6'>
+      </div>
+    </div>
+    <p>
+      还有一种方式是通过calc计算,他的问题在于一加overflow:hidden就完蛋
+    </p>
+    <div class='container'>
+      <div class='button8'>
+      </div>
+    </div>
+    <p>
+      其他border可以通过这种方式实现了
+      <br> 注意在存在z-index层级时，可能会让绑定的事件触发不了
+    </p>
+    <div class='container'>
+      <div class='button7'>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='boxx' brdr="bottom">
+      </div>
+    </div>
+    <div class='container'>
+      <div class='boxx' brdr="bottom top">
+      </div>
+    </div>
+    <div class='container'>
+      <div class='boxx' brdr="all">
+      </div>
+    </div>
+    <script>
+      let a = document.querySelector('[brdr="all"]');
+      a.addEventListener('click', () => {
+        console.log('click')
+      })
+    </script>
+  </body>
+
+</html>

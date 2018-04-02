@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .main {
+        width: 500px;
+        height: 200px;
+        position: relative;
+        background: #ddd;
+      }
+
+      .outer-mask {
+        position: absolute;
+        left: 95px;
+        top: 45px;
+        width: 390px;
+        height: 110px;
+        overflow: hidden;
+        transform: skew(20deg, 0deg);
+      }
+
+      .inner-mask {
+        position: absolute;
+        left: -45px;
+        top: 0px;
+        width: 390px;
+        height: 110px;
+        overflow: hidden;
+        transform: skew(-40deg, 0deg);
+      }
+
+      .content {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 330px;
+        height: 110px;
+        background-color: #234e7b;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="outer-mask">
+        <div class="inner-mask">
+          <div class="content">
+            hello world
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>

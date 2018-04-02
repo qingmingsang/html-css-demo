@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            .goods-info {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            .goods-info .tag-label {
+                padding-top: 7px;
+            }
+
+            .goods-info .goods-tags {
+                margin-top: 2rem;
+            }
+
+            .tags-select {
+                font-size: 0;
+            }
+
+            .tags-select>.tag-select {
+                display: inline-block;
+                font-size: 14px;
+                margin: 5px;
+                position: relative;
+                font-weight: normal;
+            }
+
+            .tags-select>.tag-select .name {
+                display: block;
+                line-height: 20px;
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+            }
+
+            .tags-select>.tag-select input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+            }
+
+            .tags-select>.tag-select input[type="radio"]:checked+.name {
+                border-color: #e3393c;
+            }
+
+            .tags-select>.tag-select input[type="radio"]:disabled+.name {
+                background: #eee;
+                color: #999;
+                cursor: not-allowed;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container goods-info">
+            <div class="row goods-tags">
+                <div class="col-md-2 tag-label">选择版本</div>
+                <div class="col-md-10">
+                    <div class="tags-select">
+                        <label class="tag-select">
+                            <input type="radio" name="version" value="1">
+                            <span class="name">全网通（2GB 16GB）</span>
+                        </label>
+                        <label class="tag-select">
+                            <input type="radio" name="version" value="2">
+                            <span class="name">全网通（3GB 32GB）</span>
+                        </label>
+                        <label class="tag-select">
+                            <input type="radio" name="version" value="3" disabled>
+                            <span class="name">联通版（2GB 16GB）</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row goods-tags">
+                <div class="col-md-2 tag-label">购买方式</div>
+                <div class="col-md-10">
+                    <div class="tags-select">
+                        <label class="tag-select">
+                            <input type="radio" name="bye-type" value="1">
+                            <span class="name">官方标配</span>
+                        </label>
+                        <label class="tag-select">
+                            <input type="radio" name="bye-type" value="2">
+                            <span class="name">移动优惠购</span>
+                        </label>
+                        <label class="tag-select">
+                            <input type="radio" name="bye-type" value="3" disabled>
+                            <span class="name">联通优惠购</span>
+                        </label>
+                        <label class="tag-select">
+                            <input type="radio" name="bye-type" value="4">
+                            <span class="name">电信优惠购</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+
+        </script>
+    </body>
+
+</html>

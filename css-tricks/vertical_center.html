@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <title></title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      .box {
+        width: 70%;
+        height: 25px;
+        border: 1px solid lightblue;
+        position: relative;
+        margin: 50px auto;
+        overflow: hidden;
+      }
+
+      .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box>div {
+        font-size: 15px;
+      }
+
+      .line {
+        height: 1px;
+        width: 100%;
+        background: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      .lh {
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .trans {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .tab {
+        display: table;
+      }
+
+      .tabc {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .tc {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box flex">
+      <div class="line"></div>
+      <div>flex</div>
+    </div>
+    <div class="box lh">
+      <div class="line"></div>
+      <div>line-height</div>
+    </div>
+    <div class="box">
+      <div class="line"></div>
+      <div class="trans">transform</div>
+    </div>
+    <div class="box tab tc">
+      <div class="line"></div>
+      <div class="tabc">table+table-cell</div>
+    </div>
+    <div class="box tc">
+      <div class="line"></div>
+      <div class="tabc">table-cell</div>
+    </div>
+    <script>
+
+    </script>
+  </body>
+
+</html>

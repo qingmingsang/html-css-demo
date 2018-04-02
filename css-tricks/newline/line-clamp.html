@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+  <body>
+    <style>
+      @keyframes width-change {
+        0%,
+        100% {
+          width: 320px
+        }
+        50% {
+          width: 260px
+        }
+      }
+
+      .one {
+        font-size: 36px;
+        letter-spacing: 28px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        color: red;
+        line-height: 18px;
+        position: relative;
+        animation: width-change 8s ease infinite;
+        background: rgb(230, 230, 230);
+        /* overflow: hidden; 用了即可正常隐藏*/
+      }
+
+      .two {
+        color: #000;
+        display: inline;
+        font-size: 12px;
+        vertical-align: top;
+        letter-spacing: 0;
+        background: rgb(204, 204, 204);
+      }
+    </style>
+    <div class="one">
+      <div class="two">腾讯成立于1998年11月，是目前中国领先的互联网增值服务提供商之一。成立10多年来，腾讯一直秉承“一切以用户价值为依归”的经营理念，为亿级海量用户提供稳定优质的各类服务，始终处于稳健发展状态。2004年6月16日，腾讯控股有限公司在香港联交所主板公开上市(股票代号700)。</div>
+    </div>
+  </body>
+
+</html>
