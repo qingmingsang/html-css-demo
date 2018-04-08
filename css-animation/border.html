@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<style>
+			.box {
+				width: 200px;
+				height: 200px;
+				background: lightblue;
+				line-height: 200px;
+				text-align: center;
+				position: relative;
+			}
+
+			.box:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+				transform: scale(0, 1);
+				transition: transform 0.4s;
+				box-sizing: border-box;
+			}
+
+			.box:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				transform: scale(1, 0);
+				transition: transform 0.4s;
+				box-sizing: border-box;
+			}
+
+			.box:hover:before,
+			.box:hover:after {
+				transform: scale(1);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			呆
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      ul,
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .demo-marquee {
+        width: 200px;
+        margin: 20px auto;
+        overflow: hidden;
+      }
+
+      .demo-marquee ul {
+        width: 1000px;
+        animation: ec-marquee-move 6s infinite linear;
+      }
+
+      .demo-marquee ul:hover {
+        animation-play-state: paused;
+      }
+
+      .demo-marquee li {
+        float: left;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      @keyframes ec-marquee-move {
+        0% {
+          transform: translateX(0px);
+        }
+        100% {
+          transform: translateX(-800px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="demo-marquee">
+      <ul>
+        <li style="background:lightblue;">
+          1
+        </li>
+        <li style="background:lightcoral;">
+          2
+        </li>
+        <li style="background:lightgoldenrodyellow;">
+          3
+        </li>
+        <li style="background:lightgreen;">
+          4
+        </li>
+        <li style="background:lightblue;">
+          1
+        </li>
+      </ul>
+      <div></div>
+    </div>
+  </body>
+
+</html>

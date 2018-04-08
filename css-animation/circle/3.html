@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<style>
+			@keyframes spin {
+				from {
+					transform: rotate(0turn) translateY(-150px) translateY(50%) rotate(2turn);
+				}
+				to {
+					transform: rotate(2turn) translateY(-50px) translateY(50%) rotate(0turn);
+				}
+			}
+
+			.avatar {
+				animation: spin 10s infinite linear;
+				transform-origin: 50% 150px;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background: lightcoral;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="avatar">饭</div>
+	</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      /*
+			flip-book样式
+		 */
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body,
+      html {
+        height: 100%;
+      }
+
+      body {
+        /*perspective 属性指定了观察者与z=0平面的距离，使具有三维位置变换的元素产生透视效果。z>0的三维元素比正常大，而z<0时则比正常小，大小程度由该属性的值决定。默认情况下，消失点位于元素的中心，但是可以通过设置perspective-origin属性来改变其位置。*/
+        perspective: 1000px;
+        background-color: #212121;
+        font-family: '微软雅黑';
+      }
+
+      .book {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -150px;
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+        transform: rotateX(30deg);
+      }
+
+      .preserve-3d {
+        /*transform-style属性指定了，该元素的子元素是（看起来）位于三维空间内，还是在该元素所在的平面内被扁平化。*/
+        transform-style: preserve-3d;
+      }
+
+      .book-page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #1976D2;
+        text-align: center;
+      }
+
+      .book-page-box {
+        transform-origin: 0 50%;
+        transform: rotateY(0deg);
+      }
+
+      @keyframes flipBook1 {
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(-160deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+
+      @keyframes flipBook2 {
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(-150deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+
+
+      @keyframes flipBook3 {
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(-140deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+
+
+      /*书的封面*/
+
+      .book-page-1 .page-front {
+        background-color: #1976D2;
+      }
+
+      .book-page-1 .page-back {
+        background-color: #fff;
+      }
+
+      .book-page-1 .page-front p {
+        font-size: 30px;
+        color: #fff;
+        margin-top: 100px;
+      }
+
+      .flip-animation-1 {
+        animation: flipBook1 17s;
+      }
+
+      /*书的第二页*/
+
+      .book-page-2 .page-back,
+      .book-page-2 .page-front {
+        background-color: #fff;
+      }
+
+      .book-page-2 .page-front p {
+        font-size: 30px;
+        color: #1976D2;
+        margin-top: 100px;
+      }
+
+      .flip-animation-2 {
+        animation: flipBook2 13s 2s;
+      }
+
+      /*书的第三页*/
+
+      .book-page-3 .page-back,
+      .book-page-3 .page-front {
+        background-color: #fff;
+      }
+
+      .book-page-3 .page-front p {
+        font-size: 30px;
+        color: #1976D2;
+        margin-top: 100px;
+      }
+
+      .flip-animation-3 {
+        animation: flipBook3 10s 3s;
+      }
+
+      /*书的第四页*/
+
+      .book-page-4 .page-front p {
+        font-size: 30px;
+        color: #1976D2;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 书的主体 -->
+    <div class="book preserve-3d">
+      <!-- 书的最后一页 -->
+      <div class="book-page-box book-page-4 preserve-3d">
+        <div class="book-page page-front">
+          <p>第三页</p>
+        </div>
+      </div>
+      <!-- 书的第三页 -->
+      <div class="book-page-box book-page-3 preserve-3d flip-animation-3">
+        <div class="book-page page-front">
+          <p>第二页</p>
+        </div>
+      </div>
+      <!-- 书的第二页 -->
+      <div class="book-page-box book-page-2 preserve-3d flip-animation-2">
+        <div class="book-page page-front">
+          <p>第一页</p>
+        </div>
+      </div>
+      <!-- 书的封面 -->
+      <div class="book-page-box book-page-1 preserve-3d flip-animation-1">
+        <div class="book-page page-front">
+          <p>
+            翻页特效
+            <br> flip-book
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

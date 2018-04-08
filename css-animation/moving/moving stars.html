@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				list-style: none;
+			}
+			
+			@-webkit-keyframes STAR-MOVE {
+				from {
+					background-position: 5% 0%
+				}
+				to {
+					background-position: 600% 0%
+				}
+			}
+			
+			@keyframes STAR-MOVE {
+				from {
+					background-position: 5% 0%
+				}
+				to {
+					background-position: 600% 0%
+				}
+			}
+			
+			.wall {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			
+			div#background {
+				background: black url('background.png') repeat 5% 0%;
+				-webkit-animation: STAR-MOVE 200s linear infinite;
+				-moz-animation: STAR-MOVE 200s linear infinite;
+				-ms-animation: STAR-MOVE 200s linear infinite;
+				animation: STAR-MOVE 200s linear infinite;
+			}
+			
+			div#midground {
+				background: url('midground.png')repeat 20% 0%;
+				z-index: 1;
+				-webkit-animation: STAR-MOVE 150s linear infinite;
+				-moz-animation: STAR-MOVE 150s linear infinite;
+				-ms-animation: STAR-MOVE 150s linear infinite;
+				animation: STAR-MOVE 150s linear infinite;
+			}
+			
+			div#foreground {
+				background: url('foreground.png')repeat 35% 0%;
+				z-index: 2;
+				-webkit-animation: STAR-MOVE 100s linear infinite;
+				-moz-animation: STAR-MOVE 100s linear infinite;
+				-ms-animation: STAR-MOVE 100s linear infinite;
+				animation: STAR-MOVE 100s linear infinite;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="background" class="wall"></div>
+		<div id="midground" class="wall"></div>
+		<div id="foreground" class="wall"></div>
+	</body>
+
+</html>

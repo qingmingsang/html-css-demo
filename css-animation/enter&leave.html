@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+
+        .box {
+            clear: both;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .button {
+            width: 200px;
+            height: 100px;
+            background: lightblue;
+            float: left;
+        }
+
+        .test1 {
+            width: 100px;
+            height: 100px;
+            float: right;
+            background: lightcoral;
+            visibility: hidden;
+            transition: 1s linear;
+            transform: translate3d(100px, 0, 0);
+            opacity: 0;
+        }
+
+        .test1 {
+            width: 100px;
+            height: 100px;
+            float: right;
+            background: lightcoral;
+            visibility: hidden;
+            transition: 1s linear;
+            transform: translate3d(100px, 0, 0);
+            opacity: 0;
+        }
+
+        .change1 {
+            visibility: visible;
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+
+        .test2 {
+            width: 100px;
+            height: 100px;
+            float: right;
+            background: lightcoral;
+            display: none;
+            transition: 1s linear;
+            transform: translate3d(100px, 0, 0);
+            opacity: 0;
+        }
+
+        .change2 {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+
+        .test3 {
+            width: 100px;
+            height: 100px;
+            float: right;
+            background: lightcoral;
+            display: none;
+        }
+
+        .test4 {
+            width: 100px;
+            height: 100px;
+            float: right;
+            background: lightcoral;
+            visibility: hidden;
+        }
+
+        .in {
+            animation: in 1s;
+        }
+
+        .out {
+            animation: out 1s;
+        }
+
+        @keyframes in {
+            from {
+                transform: translate3d(100px, 0, 0);
+                opacity: 0;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes out {
+            from {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+            to {
+                transform: translate3d(100px, 0, 0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box'>
+        <div class='button' id='one'>
+            visibility+transition
+        </div>
+        <div class='test1'>
+        </div>
+    </div>
+    <div class='box'>
+        <div class='button' id='two'>
+            display+transition
+        </div>
+        <div class='test2'>
+        </div>
+    </div>
+    <div class='box'>
+        <div class='button' id='three'>
+            display+animation
+        </div>
+        <div class='test3'>
+        </div>
+    </div>
+    <div class='box'>
+        <div class='button' id='four'>
+            <del>visibility+animation</del>
+        </div>
+        <div class='test4'>
+        </div>
+    </div>
+    <script>
+        let a = document.getElementById('one');
+        let b = document.querySelector('.test1');
+        let c = document.getElementById('two');
+        let d = document.querySelector('.test2');
+        let e = document.getElementById('three');
+        let f = document.querySelector('.test3');
+        let g = document.getElementById('four');
+        let h = document.querySelector('.test4');
+        a.addEventListener('click', () => {
+            b.classList.toggle('change1');
+        })
+        c.addEventListener('click', () => {
+            if (d.classList.contains('change2')) {
+                d.classList.remove('change2');
+                let remove = function () {
+                    d.style.display = 'none';
+                    d.removeEventListener('transitionend', remove);
+                }
+                d.addEventListener('transitionend', remove);
+                //setTimeout(remove, 1000)
+            } else {
+                d.style.display = 'block';
+                setTimeout(() => {
+                    d.classList.add('change2');
+                }, 17)
+            }
+        })
+        e.addEventListener('click', () => {
+            if (f.classList.contains('in')) {
+                f.classList.remove('in');
+                f.classList.add('out');
+                let remove = function () {
+                    f.style.display = 'none';
+                    f.removeEventListener('animationend', remove);
+                }
+                f.addEventListener('animationend', remove);
+            } else {
+                f.style.display = 'block';
+                f.classList.remove('out');
+                f.classList.add('in');
+            }
+        })
+        g.addEventListener('click', () => {
+            if (h.classList.contains('in')) {
+                h.classList.remove('in');
+                h.classList.add('out');
+                let remove = function () {
+                    h.style.visibility = 'hidden';
+                    h.removeEventListener('animationend', remove);
+                }
+                h.addEventListener('animationend', remove);
+            } else {
+                h.style.visibility = 'visible';
+                h.classList.remove('out');
+                h.classList.add('in');
+            }
+        })
+    </script>
+</body>
+
+</html>
