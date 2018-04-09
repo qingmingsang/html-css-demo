@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            .clip-items {
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 16px;
+            }
+
+            .clip-items>.clip-item {
+                margin: 1em;
+                width: 15em;
+                height: 15em;
+                border: 1px solid #ccc;
+            }
+
+            .clip-items .clip {
+                width: 100%;
+                height: 100%;
+                background-color: #6bc30d;
+                color: #fff;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+            }
+
+            .clip-items .clip.inset {
+                -webkit-clip-path: inset(2em 3em 2em 1em round 2em);
+                clip-path: inset(2em 3em 2em 1em round 2em);
+            }
+
+            .clip-items .clip.circle {
+                -webkit-clip-path: circle(5rem);
+                clip-path: circle(5rem);
+            }
+
+            .clip-items .clip.ellipse {
+                -webkit-clip-path: ellipse(45% 30% at 50% 50%);
+                clip-path: ellipse(45% 30% at 50% 50%);
+            }
+
+            .clip-items .clip.ellipse-1 {
+                -webkit-clip-path: ellipse(25% 40% at 50% 50%);
+                clip-path: ellipse(25% 40% at 50% 50%);
+            }
+
+            .clip-items .clip.polygon {
+                -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            }
+
+            .clip-items .clip.polygon-star {
+                -webkit-clip-path: polygon(50% 0%, 61% 35%, 100% 35%, 68% 57%, 85% 100%, 50% 70%, 15% 100%, 32% 57%, 0 35%, 39% 35%);
+                clip-path: polygon(50% 0%, 61% 35%, 100% 35%, 68% 57%, 85% 100%, 50% 70%, 15% 100%, 32% 57%, 0 35%, 39% 35%);
+            }
+
+            .clip-items .clip.polygon-1 {
+                -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+            }
+
+            .clip-items .clip.polygon-2 {
+                -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+                clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+            }
+        </style>
+    </head>
+
+    <body>
+        <article class="clip-items">
+            <section class="clip-item">
+                <div class="clip inset">inset</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip circle">circle</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip ellipse">ellipse</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip ellipse-1">ellipse</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip polygon">polygon</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip polygon-star">polygon</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip polygon-1">polygon</div>
+            </section>
+            <section class="clip-item">
+                <div class="clip polygon-2">polygon</div>
+            </section>
+        </article>
+        <script>
+        </script>
+    </body>
+
+</html>

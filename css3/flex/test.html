@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+            }
+
+            html,
+            body,
+            ul,
+            li {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                list-style: none;
+            }
+
+            .box {
+                display: flex;
+                flex-direction: row;
+                width: 200px;
+                height: 100%;
+                background: lightblue;
+                flex-wrap: wrap;
+            }
+
+            .box>div {
+                width: 100px;
+                height: 50px;
+                background: lightcoral;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </body>
+
+</html>

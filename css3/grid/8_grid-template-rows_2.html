@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .grid-1 {
+            grid-template-areas: "👩🏽  👩🏽  👩🏽" "👗  👗  👕" "👡  👡  👡";
+        }
+
+        .happy-chappy {
+            grid-template-areas: "-   👱    -" "👈  👕  👉  " "-   👖    -" "-   👟    -";
+        }
+
+        .prince-charles {
+            grid-template-areas: "  .    👑  .  " "  👂   👀  👂  " "  .    👃  .  " "  .    👄  .  ";
+        }
+
+        .jackpot {
+            grid-template-areas: "  🍒    🍉   🍉  " "  🍊    🍊   🍊  " "  🍋    🍇   🍏  ";
+        }
+
+        body {
+            padding-top: 20px;
+            background: #f5f7f8;
+        }
+
+        .grid-1 {
+            display: grid;
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 80px 180px 80px;
+            grid-gap: 20px;
+        }
+
+        /* items */
+
+        .grid-1 div {
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        /* specific item styles */
+
+        .item-1 {
+            background: #b03532;
+            grid-area: 👩🏽;
+        }
+
+        .item-2 {
+            background: #33a8a5;
+            grid-area: 👗;
+        }
+
+        .item-3 {
+            background: #30997a;
+            grid-area: 👕;
+        }
+
+        .item-4 {
+            background: #6a478f;
+            grid-area: 👡;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+<section class="grid-1">
+    <div class="item-1">👩🏽</div>
+    <div class="item-2">👗</div>
+    <div class="item-3">👕</div>
+    <div class="item-4">👡</div>
+</section>
+
+
+
+
+<script>
+
+</script>
+</body>
+
+</html>

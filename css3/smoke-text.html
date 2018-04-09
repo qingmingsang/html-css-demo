@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      body {
+        background: #333;
+        overflow: hidden;
+        padding-top: 200px;
+        color: transparent;
+        backface-visibility: hidden;
+      }
+
+      #test {
+        text-align: center;
+        padding-top: 200px;
+        cursor: pointer;
+      }
+
+      span {
+        display: inline-block;
+        font-size: 100px;
+        text-shadow: 0 0 0 whitesmoke;
+      }
+
+      #test:hover span {
+        animation: smoke 3s;
+      }
+
+      @keyframes smoke {
+        60% {
+          text-shadow: 0 0 40px whitesmoke;
+        }
+        to {
+          transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg) scale(1.5);
+          text-shadow: 0 0 20px whitesmoke;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="test">
+      <span>S</span>
+      <span>M</span>
+      <span>O</span>
+      <span>K</span>
+      <span>E</span>
+    </div>
+  </body>
+
+</html>

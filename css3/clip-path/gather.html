@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .wrapper {
+        margin: 50px;
+        float: left;
+        clear: both;
+        box-sizing: border-box;
+        padding-left: 50px;
+      }
+
+      .wrapper>div {
+        float: left;
+        clear: both;
+      }
+
+      .wrapper>div+div {
+        margin: 50px 0;
+      }
+
+      /* 圆形 */
+
+      .circle {
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+        clip-path: circle(50px at 50px 50px);
+      }
+
+      /* 十边形 */
+
+      .polygon {
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+      }
+
+      .polygon-animate {
+        width: 200px;
+        height: 200px;
+        background-color: crimson;
+        -webkit-transition: .3s;
+        transition: .3s;
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+        -webkit-animation: polygon-ani 5s linear infinite;
+        animation: polygon-ani 5s linear infinite;
+      }
+
+      @-webkit-keyframes polygon-ani {
+        10% {
+          background-color: darkorange;
+          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+        }
+        14% {
+          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+        }
+        24% {
+          background-color: lemonchiffon;
+          -webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+          clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+        }
+        28% {
+          -webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+          clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+        }
+        38% {
+          background-color: darkturquoise;
+          -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+        }
+        42% {
+          -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+        }
+        52% {
+          background-color: darkcyan;
+          -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+          clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+        }
+        56% {
+          -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+          clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+        }
+        66% {
+          background-color: deepskyblue;
+          -webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+        70% {
+          -webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+        80% {
+          background-color: indigo;
+          -webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+          clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+        }
+        84% {
+          -webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+          clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+        }
+        94% {
+          background-color: crimson;
+          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+        }
+      }
+
+      @keyframes polygon-ani {
+        10% {
+          background-color: darkorange;
+          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+        }
+        14% {
+          -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+        }
+        24% {
+          background-color: lemonchiffon;
+          -webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+          clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+        }
+        28% {
+          -webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+          clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+        }
+        38% {
+          background-color: darkturquoise;
+          -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+        }
+        42% {
+          -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+        }
+        52% {
+          background-color: darkcyan;
+          -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+          clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+        }
+        56% {
+          -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+          clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+        }
+        66% {
+          background-color: deepskyblue;
+          -webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+        70% {
+          -webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+          clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+        80% {
+          background-color: indigo;
+          -webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+          clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+        }
+        84% {
+          -webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+          clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+        }
+        94% {
+          background-color: crimson;
+          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+        }
+      }
+
+      .triangle2rect {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        -webkit-animation: aniContainer 2s infinite alternate;
+        animation: aniContainer 2s infinite alternate;
+      }
+
+      .triangle2rect div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .a {
+        background: deeppink;
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+        clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+        -webkit-animation: a 2s infinite alternate;
+        animation: a 2s infinite alternate;
+      }
+
+      .b {
+        background: deeppink;
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+        clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+        -webkit-animation: b 2s infinite alternate;
+        animation: b 2s infinite alternate;
+      }
+
+      .c {
+        background: deeppink;
+        -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+        clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+        -webkit-animation: c 2s infinite alternate;
+        animation: c 2s infinite alternate;
+      }
+
+      .d {
+        background: deeppink;
+        -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+        clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+        -webkit-animation: d 2s infinite alternate;
+        animation: d 2s infinite alternate;
+      }
+
+      @-webkit-keyframes a {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+          clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
+          clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
+        }
+      }
+
+      @keyframes a {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+          clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
+          clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
+        }
+      }
+
+      @-webkit-keyframes b {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(25% 0%, 50% 0%, 37.5% 100%);
+          clip-path: polygon(25% 0%, 50% 0%, 37.5% 100%);
+        }
+      }
+
+      @keyframes b {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(25% 0%, 50% 0%, 37.5% 100%);
+          clip-path: polygon(25% 0%, 50% 0%, 37.5% 100%);
+        }
+      }
+
+      @-webkit-keyframes c {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+          clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(62.5% 0%, 75% 100%, 50% 100%);
+          clip-path: polygon(62.5% 0%, 75% 100%, 50% 100%);
+        }
+      }
+
+      @keyframes c {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+          clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(62.5% 0%, 75% 100%, 50% 100%);
+          clip-path: polygon(62.5% 0%, 75% 100%, 50% 100%);
+        }
+      }
+
+      @-webkit-keyframes d {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+          clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(100% 0%, 87.5% 100%, 75% 0%);
+          clip-path: polygon(100% 0%, 87.5% 100%, 75% 0%);
+        }
+      }
+
+      @keyframes d {
+        0%,
+        10% {
+          background: deeppink;
+          -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+          clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+        }
+        90%,
+        100% {
+          background: #000;
+          -webkit-clip-path: polygon(100% 0%, 87.5% 100%, 75% 0%);
+          clip-path: polygon(100% 0%, 87.5% 100%, 75% 0%);
+        }
+      }
+
+      @-webkit-keyframes aniContainer {
+        0%,
+        10% {
+          width: 100px;
+          height: 100px;
+        }
+        90%,
+        100% {
+          width: 250px;
+          height: 60px;
+        }
+      }
+
+      @keyframes aniContainer {
+        0%,
+        10% {
+          width: 100px;
+          height: 100px;
+        }
+        90%,
+        100% {
+          width: 250px;
+          height: 60px;
+        }
+      }
+
+      #explode {
+        width: 300px;
+        height: 300px;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        -webkit-transition-timing-function: cubic-bezier(0.92, -0.5, 1, 0.12);
+        transition-timing-function: cubic-bezier(0.92, -0.5, 1, 0.12);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class='wrapper'>
+      <div class="polygon-animate"></div>
+      <div style="height: 110px;width: 200px;">
+        <div class="triangle2rect">
+          <div class="a"></div>
+          <div class="b"></div>
+          <div class="c"></div>
+          <div class="d"></div>
+        </div>
+      </div>
+      <div id='explode'></div>
+
+      <div class='circle'></div>
+      <div class='polygon'></div>
+    </div>
+    <script>
+      setInterval(function () {
+        const length = 2000;
+
+        let el = document.getElementById("explode");
+        let coordinate = "";
+
+        for (let i = 0; i < length; i++) {
+          coordinate +=
+            parseInt(Math.random() * 10000) / 100 +
+            "% " +
+            parseInt(Math.random() * 10000) / 100 +
+            "%, ";
+        }
+
+        coordinate = "polygon(" + coordinate.slice(0, -2) + ")";
+
+        el.style.clipPath = coordinate;
+        el.style.backgroundColor =
+          "#" + (~~(Math.random() * (1 << 24))).toString(16);
+      }, 500);
+
+    </script>
+  </body>
+
+</html>

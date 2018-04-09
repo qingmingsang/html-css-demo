@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .pentagon {
+        position: relative;
+        width: 60px;
+        border-bottom: 60px solid yellowgreen;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+      }
+
+      .pentagon::before {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: -40px;
+        border-top: 60px solid yellowgreen;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+      }
+
+
+
+      .pentagon2 {
+        position: relative;
+        width: 60px;
+        border-bottom: 60px solid yellowgreen;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        margin-top: 100px;
+      }
+
+      .pentagon2::before {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 0px;
+        top: 60px;
+        left: -40px;
+        border-top: 60px solid yellowgreen;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pentagon">
+    </div>
+    <div class="pentagon2">
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>

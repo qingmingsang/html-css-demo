@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			html,
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				list-style: none;
+			}
+			
+			.container {
+				max-width: 650px;
+				height: auto;
+				background: lightblue;
+			}
+			
+			.box {
+				background: lightcoral;
+				color: white;
+				font-size: 60px;
+				text-align: center;
+				line-height: 100px;
+				width: 100px;
+				height: 100px;
+				margin: 30px;
+			}
+			
+			.wrapper {
+				max-width: 650px;
+				text-align: center;
+				font-size: 20px;
+				color: white;
+				background: lightslategray;
+			}
+			
+			.content {
+				max-width: 650px;
+				text-align: center;
+				font-size: 20px;
+				color: white;
+				background: lightslategray;
+			}
+			
+			.wrapper::before {
+				content: ' =>  ';
+			}
+			
+			.content::before {
+				content: ' =>  ';
+			}
+			
+			.box1 {
+				background: lightcoral;
+				color: white;
+				font-size: 60px;
+				text-align: center;
+				line-height: 100px;
+				width: 100px;
+				height: 100px;
+				margin: 30px;
+			}
+			
+			.box1:nth-child(1) {
+				order: 6;
+			}
+			
+			.box1:nth-child(2) {
+				order: 4;
+			}
+			
+			.box1:nth-child(3) {
+				order: 5;
+			}
+			
+			.box1:nth-child(4) {
+				order: 2;
+			}
+			
+			.box1:nth-child(5) {
+				order: 3;
+			}
+			
+			.box1:nth-child(6) {
+				order: 1;
+			}
+			
+			.box2 {
+				background: lightcoral;
+				color: white;
+				font-size: 60px;
+				text-align: center;
+				line-height: 100px;
+				width: 100px;
+				height: 100px;
+				margin: 30px;
+				flex-grow: 1;
+			}
+			
+			.box2:nth-child(1) {
+				flex-grow: 10;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">display: flex;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper">display: flex;flex-direction: row;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;flex-direction: row;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper">display: flex;flex-direction: row-reverse;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;flex-direction: row-reverse;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper">display: flex;flex-direction: column;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;flex-direction: column;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper">display: flex;flex-direction: column-reverse;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;flex-direction: column-reverse;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper">display: flex; flex-direction: row; flex-wrap: wrap;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;flex-direction: row; flex-wrap: wrap;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper">display: flex; flex-direction: row; flex-wrap: wrap-reverse;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex;flex-direction: row; flex-wrap: wrap-reverse;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-end;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-end;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; align-items: flex-start;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row; align-items: flex-start;">
+			<div class="box">1</div>
+			<div class="box" style="height:50px;line-height: 50px;">2</div>
+			<div class="box">3</div>
+			<div class="box" style="height:50px;line-height: 50px;">4</div>
+			<div class="box">5</div>
+			<div class="box" style="height:50px;line-height: 50px;">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; align-items: flex-end;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row;  align-items: flex-end;">
+			<div class="box">1</div>
+			<div class="box" style="height:50px;line-height: 50px;">2</div>
+			<div class="box">3</div>
+			<div class="box" style="height:50px;line-height: 50px;">4</div>
+			<div class="box">5</div>
+			<div class="box" style="height:50px;line-height: 50px;">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; align-items: center;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row;  align-items: center;">
+			<div class="box">1</div>
+			<div class="box" style="height:50px;line-height: 50px;">2</div>
+			<div class="box">3</div>
+			<div class="box" style="height:50px;line-height: 50px;">4</div>
+			<div class="box">5</div>
+			<div class="box" style="height:50px;line-height: 50px;">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row; align-items: baseline;</div>
+		<div class="content">none</div>
+		<div class="container" style="display: flex; flex-direction: row;  align-items: baseline;">
+			<div class="box">1</div>
+			<div class="box" style="height:50px;line-height: 50px;">2</div>
+			<div class="box">3</div>
+			<div class="box" style="height:50px;line-height: 50px;">4</div>
+			<div class="box">5</div>
+			<div class="box" style="height:50px;line-height: 50px;">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex; flex-direction: row;</div>
+		<div class="content"> .box1:nth-child(1) { order: 6; } .box1:nth-child(2) { order: 4; } .box1:nth-child(3) { order: 5; } .box1:nth-child(4) { order: 2; } .box1:nth-child(5) { order: 3; } .box1:nth-child(6) { order: 1; }
+		</div>
+		<div class="container" style="  display: flex;flex-direction: row;">
+			<div class="box1">1</div>
+			<div class="box1">2</div>
+			<div class="box1">3</div>
+			<div class="box1">4</div>
+			<div class="box1">5</div>
+			<div class="box1">6</div>
+		</div>
+
+		<div class="wrapper"> display: flex;flex-direction: row;flex-wrap: wrap;</div>
+		<div class="content"> .box2:nth-child(1) { flex-grow: 10; }
+		</div>
+		<div class="container" style="  display: flex;flex-direction: row;flex-wrap: wrap;">
+			<div class="box2">1</div>
+			<div class="box2">2</div>
+			<div class="box2">3</div>
+			<div class="box2">4</div>
+			<div class="box2">5</div>
+			<div class="box2">6</div>
+		</div>
+	</body>
+
+</html>

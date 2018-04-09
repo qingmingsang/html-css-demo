@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .notching {
+        width: 40px;
+        height: 40px;
+        padding: 40px;
+        background: linear-gradient(135deg, transparent 15px, yellowgreen 0) top left,
+        linear-gradient(-135deg, transparent 15px, yellowgreen 0) top right,
+        linear-gradient(-45deg, transparent 15px, yellowgreen 0) bottom right,
+        linear-gradient(45deg, transparent 15px, yellowgreen 0) bottom left;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 40px;
+      }
+
+      .octagon {
+        position: relative;
+        width: 40px;
+        height: 100px;
+        background: yellowgreen;
+        margin-left: 40px;
+      }
+
+      .octagon::before {
+        content: "";
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: 40px;
+        border-left: 30px solid yellowgreen;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+      }
+
+      .octagon::after {
+        content: "";
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: -30px;
+        border-right: 30px solid yellowgreen;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="notching">
+    </div>
+    <div class="octagon"></div>
+    <script>
+    </script>
+  </body>
+
+</html>

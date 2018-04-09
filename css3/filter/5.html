@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            background: url(./test.jpg);
+            background-size: cover;
+        }
+
+        .modal {
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(255, 255, 255, 0.5);
+            color: black;
+
+        }
+
+        .item {
+            width: 100%;
+            padding: 20px 30px;
+            background: white;
+        }
+
+        @supports (-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px)) {
+            .modal {
+                -webkit-backdrop-filter: blur(8px); /* Safari for macOS & iOS*/
+                backdrop-filter: blur(8px); /* Google Chrome */
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="main">
+
+</div>
+<div class="modal">
+    <div class="item">
+        我所有的自负皆来自我的自卑，所有的英雄气概都来自于我的软弱。
+    </div>
+    <div class="item">
+        嘴里振振有词是因为心里满是怀疑，深情是因为痛恨自己无情。
+    </div>
+    <div class="item">
+        这世界没有一件事情是虚空而生的，站在光里，背后就会有阴影，这深夜里一片寂静，是因为你还没有听见声音。
+    </div>
+</div>
+<script>
+    let a = document.querySelector('.main');
+    let b = document.querySelector('.modal');
+    a.addEventListener('click', () => {
+        b.style.display = 'block';
+    })
+    b.addEventListener('click', () => {
+        b.style.display = 'none';
+    })
+</script>
+</body>
+</html>

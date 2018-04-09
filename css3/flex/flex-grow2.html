@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        html,
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        .flex {
+            display: flex;
+            width: 600px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .flex li:nth-child(1) {
+            width: 200px;
+        }
+
+        .flex li:nth-child(2) {
+            flex-grow: 1;
+            width: 50px;
+        }
+
+        .flex li:nth-child(3) {
+            flex-grow: 3;
+            width: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+<ul class="flex">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+</ul>
+<script>
+
+</script>
+</body>
+
+</html>

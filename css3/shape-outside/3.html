@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            .text-section {
+                width: 400px;
+                height: 400px;
+                margin: 0 auto;
+            }
+
+            p,
+            h1 {
+                font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+                text-align: justify;
+            }
+
+            .wrap-before {
+                shape-outside: polygon(0 0, 0 100%, 100% 100%, 0 50%, 100% 0);
+                float: left;
+                width: 50%;
+                height: 100%;
+            }
+
+            .wrap-after {
+                shape-outside: polygon(100% 0, 100% 100%, 0% 100%, 100% 50%, 0% 0);
+                float: right;
+                width: 50%;
+                height: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="text-section">
+            <div class="wrap-before"></div>
+            <div class="wrap-after"></div>
+            <h1>Hello CSSshapes</h1>
+            <p>
+                The shape-outside CSS property uses shape values to define the float area for a float and will cause inline content to wrap
+                around the shape instead of the float's bounding box. For interpolating between one basic shape and a se
+            </p>
+        </div>
+        <script>
+        </script>
+    </body>
+
+</html>

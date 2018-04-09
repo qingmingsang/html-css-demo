@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrapper {
+            background-color: black;
+            display: grid;
+            grid-column-gap: 1px;
+            grid-row-gap: 1px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 2fr;
+        }
+
+        @media screen and (min-width: 500px) {
+            .wrapper {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media screen and (min-width: 800px) {
+            .wrapper {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        .letter {
+            background-color: #0069b3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-size: 70px;
+            color: white;
+            line-height: 1;
+            font-family: 'hobeaux-rococeaux-background', Helvetica;
+            font-weight: 200;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class='wrapper'>
+    <div class='letter'>
+        A
+    </div>
+    <div class='letter'>
+        B
+    </div>
+    <div class='letter'>
+        C
+    </div>
+    <div class='letter'>
+        D
+    </div>
+</div>
+
+
+<script>
+
+</script>
+</body>
+
+</html>
