@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .box {
+        width: 200px;
+        height: 100px;
+        background: lightcyan;
+        display: flex;
+        margin: 40px auto;
+      }
+
+      .left {
+        background: lightcoral;
+        width: 50px;
+      }
+
+      .right {
+        flex: 1;
+        background: lightgreen;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class='box'>
+      <div class='left'></div>
+      <div class='right'></div>
+    </div>
+
+    <div class='box'>
+      <div class='left'></div>
+      <div class='right'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    </div>
+
+    <div class='box'>
+      <div class='left'></div>
+      <div class='right' style='width:0;word-wrap: break-word;'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    </div>
+
+    <div class='box'>
+      <div class='left'></div>
+      <div class='right' style='overflow:hidden;word-wrap: break-word;'>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    </div>
+    <script>
+
+    </script>
+  </body>
+
+</html>
