@@ -1,0 +1,248 @@
+﻿<!doctype html>
+<html ng-app="phonecatApp" ng-controller="PhoneListCtrl">
+
+	<head>
+		<title ng-bind-template="{{query}}">Google Phone Gallery</title>
+		<link rel="stylesheet" href="../common/bootstrap.min.css">
+		<link rel="stylesheet" href="app.css">
+		<style>
+			.phone-listing.ng-enter,
+			.phone-listing.ng-leave,
+			.phone-listing.ng-move {
+				-webkit-transition: 0.5s linear all;
+				-moz-transition: 0.5s linear all;
+				-o-transition: 0.5s linear all;
+				transition: 0.5s linear all;
+			}
+			
+			.phone-listing.ng-enter,
+			.phone-listing.ng-move {
+				opacity: 0;
+				height: 0;
+				overflow: hidden;
+			}
+			
+			.phone-listing.ng-move.ng-move-active,
+			.phone-listing.ng-enter.ng-enter-active {
+				opacity: 1;
+				height: 120px;
+			}
+			
+			.phone-listing.ng-leave {
+				opacity: 1;
+				overflow: hidden;
+			}
+			
+			.phone-listing.ng-leave.ng-leave-active {
+				opacity: 0;
+				height: 0;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+			/* cross fading between routes with ngView */
+			
+			.view-container {
+				position: relative;
+			}
+			
+			.view-frame.ng-enter,
+			.view-frame.ng-leave {
+				background: white;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+			
+			.view-frame.ng-enter {
+				-webkit-animation: 0.5s fade-in;
+				-moz-animation: 0.5s fade-in;
+				-o-animation: 0.5s fade-in;
+				animation: 0.5s fade-in;
+				z-index: 100;
+			}
+			
+			.view-frame.ng-leave {
+				-webkit-animation: 0.5s fade-out;
+				-moz-animation: 0.5s fade-out;
+				-o-animation: 0.5s fade-out;
+				animation: 0.5s fade-out;
+				z-index: 99;
+			}
+			
+			@keyframes fade-in {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			
+			@-moz-keyframes fade-in {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			
+			@-webkit-keyframes fade-in {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+			
+			@keyframes fade-out {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+			
+			@-moz-keyframes fade-out {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+			
+			@-webkit-keyframes fade-out {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="view-container">
+			<div ng-view class="view-frame"></div>
+		</div>
+		<script src="../common/jquery.min.js" type="text/javascript"></script>
+		<script src="../common/angular.min.js" type="text/javascript"></script>
+		<script src="../common/angular-route.min.js" type="text/javascript"></script>
+		<script src="../common/angular-resource.min.js" type="text/javascript"></script>
+		<script src="../common/angular-animate.min.js" type="text/javascript"></script>
+		<script>
+			var phonecatApp = angular.module('phonecatApp', [
+				'ngRoute',
+				'phonecatAnimations',
+				'phonecatControllers',
+				'phonecatFilters',
+				'phonecatServices'
+			]);
+			phonecatApp.config(['$routeProvider',
+				function($routeProvider) {
+					$routeProvider.
+					when('/phones', {
+						templateUrl: 'phone-list2.html',
+						controller: 'PhoneListCtrl'
+					}).
+					when('/phones/:phoneId', {
+						templateUrl: 'phone-detail6.html',
+						controller: 'PhoneDetailCtrl'
+					}).
+					otherwise({
+						redirectTo: '/phones'
+					});
+				}
+			]);
+			var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+			phonecatAnimations.animation('.phone', function() {
+				var animateUp = function(element, className, done) {
+					if (className != 'active') {
+						return;
+					}
+					element.css({
+						position: 'absolute',
+						top: 500,
+						left: 0,
+						display: 'block'
+					});
+					jQuery(element).animate({
+						top: 0
+					}, done);
+					return function(cancel) {
+						if (cancel) {
+							element.stop();
+						}
+					};
+				}
+				var animateDown = function(element, className, done) {
+					if (className != 'active') {
+						return;
+					}
+					element.css({
+						position: 'absolute',
+						left: 0,
+						top: 0
+					});
+					jQuery(element).animate({
+						top: -500
+					}, done);
+					return function(cancel) {
+						if (cancel) {
+							element.stop();
+						}
+					};
+				}
+				return {
+					addClass: animateUp,
+					removeClass: animateDown
+				};
+			});
+			var phonecatControllers = angular.module('phonecatControllers', []);
+			phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
+				function($scope, Phone) {
+					$scope.phones = Phone.query();
+					$scope.orderProp = 'age';
+				}
+			]);
+			phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
+				function($scope, $routeParams, Phone) {
+					$scope.phone = Phone.get({
+						phoneId: $routeParams.phoneId
+					}, function(phone) {
+						$scope.mainImageUrl = phone.images[0];
+					});
+					$scope.setImage = function(imageUrl) {
+						$scope.mainImageUrl = imageUrl;
+					};
+				}
+			]);
+			angular.module('phonecatFilters', []).filter('checkmark', function() {
+				return function(input) {
+					return input ? '\u2713' : '\u2718';
+				};
+			});
+			var phonecatServices = angular.module('phonecatServices', ['ngResource']);
+			phonecatServices.factory('Phone', ['$resource',
+				function($resource) {
+					return $resource('../phones/:phoneId.json', {}, {
+						query: {
+							method: 'GET',
+							params: {
+								phoneId: 'phones'
+							},
+							isArray: true
+						}
+					});
+				}
+			]);
+		</script>
+	</body>
+
+</html>

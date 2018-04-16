@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<title>AngularJS animation installation</title>
+	</head>
+
+	<body>
+		<style type="text/css">
+			.firstSampleAnimation.ng-hide-add,
+			.firstSampleAnimation.ng-hide-remove {
+				-webkit-transition: 1s ease-in-out opacity;
+				transition: 1s ease-in-out opacity;
+				opacity: 1;
+			}
+			
+			.firstSampleAnimation.ng-hide {
+				opacity: 0;
+			}
+		</style>
+
+		<div>
+			<div ng-controller="animationsCtrl">
+				<h1>ngShow animation</h1>
+				<button ng-click="fadeAnimation = !fadeAnimation">Toggle fade</button> fadeAnimation value: {{fadeAnimation}}
+				<div class="firstSampleAnimation" ng-show="fadeAnimation">
+					This element appears when the fadeAnimation model is true
+				</div>
+			</div>
+		</div>
+		<script src="../common/angular.min.js"></script>
+		<script src="../common/angular-animate.min.js"></script>
+		<script>
+		//ng-show切换显示隐藏，默认为false，true则显示。
+		//默认隐藏样式名为.ng-hide。.ng-hide-add 增加动作，去除动作 .ng-hide-remove
+			var app = angular.module('myApp', ['ngAnimate']);
+			app.controller('animationsCtrl', function($scope) {
+				$scope.fadeAnimation = false;
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<title>AngularJS JavaScript animations - ngHide</title>
+	</head>
+
+	<body>
+		<div>
+			<h2>ngHide Animation</h2>
+			<button ng-click="hide = !hide">Hide/Show the div below</button>
+			<div ng-hide="hide" class="hideJsAnimation">
+				This is a div element with ng-hide="hide"
+			</div>
+		</div>
+		<script src="../common/jquery.min.js"></script>
+		<script src="../common/angular.min.js"></script>
+		<script src="../common/angular-animate.min.js"></script>
+		<script src="jsAnimationNgHide.js"></script>
+	</body>
+
+</html>

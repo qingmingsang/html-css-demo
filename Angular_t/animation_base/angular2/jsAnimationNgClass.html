@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<title>AngularJS JavaScript animations - ngClass</title>
+	</head>
+
+	<body>
+		<link href="../common/bootstrap.min.css" rel="stylesheet" />
+		<h2>ngClass JavaScript Animation</h2>
+		<button ng-click="toggleNgClass = !toggleNgClass">Toggle ngClass animation</button>
+		<div ng-class="{'animationClass' : toggleNgClass}" class="firstJsAnimation alert alert-info">
+			This element has class 'ngClassAnimationSample' and the ngClass directive is declared as ng-class="{'animationClass' : toggleNgClass}"
+		</div>
+		<script src="../common/jquery.min.js"></script>
+		<script src="../common/angular.min.js"></script>
+		<script src="../common/angular-animate.min.js"></script>
+		<script src="jsAnimationNgClass.js"></script>
+	</body>
+
+</html>

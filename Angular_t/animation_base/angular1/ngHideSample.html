@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<title>AngularJS ngHide sample</title>
+	</head>
+
+	<body>
+		<link href="../common/bootstrap.min.css" rel="stylesheet" />
+		<style>
+			/* ngHide animation */
+			
+			.ngHideSample {
+				padding: 10px;
+				margin: 5px;
+			}
+			
+			.ngHideSample.ng-hide-add {
+				-webkit-transition: all linear 0.3s;
+				-moz-transition: all linear 0.3s;
+				-ms-transition: all linear 0.3s;
+				-o-transition: all linear 0.3s;
+				opacity: 1;
+			}
+			
+			.ngHideSample.ng-hide-add-active {
+				opacity: 0;
+			}
+			
+			.ngHideSample.ng-hide-remove {
+				-webkit-transition: all linear 0.3s;
+				-moz-transition: all linear 0.3s;
+				-ms-transition: all linear 0.3s;
+				-o-transition: all linear 0.3s;
+				opacity: 0;
+			}
+			
+			.ngHideSample.ng-hide-remove-active {
+				opacity: 1;
+			}
+		</style>
+		<div>
+			<h1>ngHide animation</h1>
+			<div>
+				<button ng-click="disabled = !disabled">Toggle ngHide animation</button>
+				<div ng-hide="disabled" class="ngHideSample bg-success">
+					This element has the ng-hide directive.
+				</div>
+			</div>
+		</div>
+		<script src="../common/angular.min.js"></script>
+		<script src="../common/angular-animate.min.js"></script>
+		<script>
+		//本质上是 ng-hide为 true 后加上.ng-hide-add-active类
+			var app = angular.module('myApp', ['ngAnimate']);
+		</script>
+	</body>
+
+</html>

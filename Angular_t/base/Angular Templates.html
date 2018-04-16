@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html ng-app="phonecatApp">
+
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="../common/bootstrap.min.css">
+		<link rel="stylesheet" href="app.css">
+	</head>
+
+	<body ng-controller="PhoneListCtrl">
+
+		<ul>
+			<li ng-repeat="phone in phones">
+				{{phone.name}}
+				<p>{{phone.snippet}}</p>
+			</li>
+		</ul>
+
+		<p>Total number of phones: {{phones.length}}</p>
+		<p>{{hello}}</p>
+		<table>
+			<tr>
+				<th>row number</th>
+			</tr>
+			<tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">
+				<td>{{i}}</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<th>row number</th>
+			</tr>
+			<tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]">
+				<td>{{i+1}}</td>
+			</tr>
+		</table>
+		<script src="../common/angular.min.js" type="text/javascript"></script>
+		<script>
+			var phonecatApp = angular.module('phonecatApp', []);
+			phonecatApp.controller('PhoneListCtrl', function($scope) {
+				$scope.hello = "Hello, World!";
+				$scope.phones = [{
+					'name': 'Nexus S',
+					'snippet': 'Fast just got faster with Nexus S.'
+				}, {
+					'name': 'Motorola XOOM™ with Wi-Fi',
+					'snippet': 'The Next, Next Generation tablet.'
+				}, {
+					'name': 'MOTOROLA XOOM™',
+					'snippet': 'The Next, Next Generation tablet.'
+				}];
+			});
+		</script>
+	</body>
+
+</html>
