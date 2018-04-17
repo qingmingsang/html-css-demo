@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      p {
+        margin: 0;
+        color: lightcoral;
+        font-size: 20px;
+      }
+
+      .a {
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid lightblue;
+        margin: 40px auto;
+      }
+
+      .b {
+        margin-right: 10px;
+      }
+
+      .a div {
+        font-size: 20px;
+      }
+
+      .a span {
+        font-size: 40px;
+      }
+
+      .a b {
+        font-size: 60px;
+      }
+
+      .float {}
+
+      .float .b {
+        float: left;
+      }
+
+      .inline {}
+
+      .inline .b {
+        display: inline;
+        vertical-align: bottom;
+      }
+
+      .flex {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .flex2 {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .flex2 .b {
+        display: inline;
+        vertical-align: bottom;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>float</p>
+    <div class='a float'>
+      <div class='b'>哈哈</div>
+      <span class='b'>嘎嘎</span>
+      <b class='b'>呱呱</b>
+      <div class='b'>haha</div>
+      <span class='b'>gaga</span>
+      <b class='b'>guagua</b>
+    </div>
+    <p>inline</p>
+    <div class='a inline'>
+      <div class='b'>哈哈</div>
+      <span class='b'>嘎嘎</span>
+      <b class='b'>呱呱</b>
+      <div class='b'>haha</div>
+      <span class='b'>gaga</span>
+      <b class='b'>guagua</b>
+    </div>
+    <p>flex</p>
+    <div class='a flex'>
+      <div class='b'>哈哈</div>
+      <span class='b'>嘎嘎</span>
+      <b class='b'>呱呱</b>
+      <div class='b'>haha</div>
+      <span class='b'>gaga</span>
+      <b class='b'>guagua</b>
+    </div>
+    <p>flex+inline</p>
+    <div class='a flex2'>
+      <div class='b'>哈哈</div>
+      <span class='b'>嘎嘎</span>
+      <b class='b'>呱呱</b>
+      <div class='b'>haha</div>
+      <span class='b'>gaga</span>
+      <b class='b'>guagua</b>
+    </div>
+    <script>
+    </script>
+  </body>
+
+</html>
