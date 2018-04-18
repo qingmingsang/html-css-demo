@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .reference {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: lightcoral;
+      }
+
+      .popout-menu {
+        position: absolute;
+        visibility: hidden;
+        left: 100%;
+        color: white;
+        background: rgba(0, 0, 0, 0.5)
+      }
+
+      .reference:hover>.popout-menu {
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reference">
+      <div class="popout-menu">
+        Popout menu
+      </div>
+    </div>
+  </body>
+
+</html>

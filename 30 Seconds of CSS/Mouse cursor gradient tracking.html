@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .mouse-cursor-gradient-tracking {
+        position: relative;
+        background: #7983ff;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border: none;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        overflow: hidden;
+      }
+
+      .mouse-cursor-gradient-tracking span {
+        position: relative;
+      }
+
+      .mouse-cursor-gradient-tracking::before {
+        --size: 0;
+        content: '';
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: var(--size);
+        height: var(--size);
+        background: radial-gradient(circle closest-side, pink, transparent);
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease;
+      }
+
+      .mouse-cursor-gradient-tracking:hover::before {
+        --size: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="mouse-cursor-gradient-tracking">
+      <span>Hover me</span>
+    </button>
+    <script>
+      var btn = document.querySelector('.mouse-cursor-gradient-tracking')
+      btn.onmousemove = function (e) {
+        var x = e.pageX - btn.offsetLeft
+        var y = e.pageY - btn.offsetTop
+        btn.style.setProperty('--x', x + 'px')
+        btn.style.setProperty('--y', y + 'px')
+      }
+      //如果元素的父级具有定位上下文(position: relative )，还需要减去它的偏移量。
+      //var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
+      //var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
+
+    </script>
+  </body>
+
+</html>

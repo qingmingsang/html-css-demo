@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .pretty-text-underline {
+        font-family: Arial, sans-serif;
+        display: inline;
+        font-size: 18px;
+        text-shadow: 1px 1px 0 #f5f6f9, -1px 1px 0 #f5f6f9, -1px -1px 0 #f5f6f9, 1px -1px 0 #f5f6f9;
+        background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
+        background-position: 0 0.98em;
+        background-repeat: repeat-x;
+        background-size: 1px 1px;
+      }
+
+      .pretty-text-underline::selection {
+        background-color: rgba(0, 150, 255, 0.3);
+        text-shadow: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="pretty-text-underline">Pretty text underline without clipping descending letters.</p>
+
+  </body>
+
+</html>
