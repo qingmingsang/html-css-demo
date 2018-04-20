@@ -193,6 +193,29 @@ background-position: 0 0, 15px 15px;
 border-radius可以单独指定水平和垂直半径.
 `border-radius:100px/75px`
 
+## 平行四边形
+利用transform:skew (ie9+)
+
+## 菱形图片
+利用transform或clip-path(future)
+
+## 切角效果
+可利用border,linear-gradient,border-image,clip-path,corner-shape(futrue)
+
+## 梯形标签页
+利用transform:perspective (ie10+不完全支持)
+
+## 简单的饼图
+半圆旋转,到50%时变色.
+animation-delay可以是负值,加上animation-play-state: paused可以控制动画不同状态以实现不同表现.
+基本上来说,css不好实现的图形,都可以通过svg实现.
+
+# 4. 视觉效果
+
+
+
+
+
 
 
 
