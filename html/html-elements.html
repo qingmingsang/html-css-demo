@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {
+        margin: 50px;
+      }
+
+      button {
+        margin: 20px auto;
+        display: block;
+      }
+
+      div {
+        border: 1px solid lightblue;
+        margin: 20px auto;
+        display: block;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <button class="alert">Dialog 简单对话框</button>
+    </div>
+    <div>
+      <button class="prompt">Dialog 带输入框的对话框</button>
+    </div>
+    <div class="dialog">
+      Dialog 自定义内容标签
+      <br>只有chrome支持
+      <br> show() 和 showModal() 的展示样式是不一样的
+      <dialog id="dialog">
+        <p>Greetings, one and all!</p>
+      </dialog>
+    </div>
+    <div title="所谓tooltip">Tooltip 提示文本</div>
+    <div>
+      InputNumber 数字输入
+      <br> IE10+
+      <input type="number" />
+    </div>
+    <div>
+      Slider or Range 滑块选择器
+      <br> IE10+
+      <input type="range" />
+    </div>
+    <div>
+      ColorPicker 取色器
+      <br>IE不支持
+      <input type="color" />
+    </div>
+    <div>
+      Checkbox 多选
+      <input type="checkbox" />
+      <input type="checkbox" />
+    </div>
+    <div>
+      Radio 单选
+      <input type="radio" name="single" />
+      <input type="radio" name="single" />
+    </div>
+    <div>
+      DatePicker 时间选择器
+      <br>IE不支持
+      <input type="date" />
+    </div>
+    <div>
+      Select 选择器
+      <select>
+        <option>选项</option>
+        <option>选项</option>
+      </select>
+    </div>
+    <div>
+      Progress 进度条
+      <br> IE10+
+      <progress value="70" max="100" />
+    </div>
+    <div>
+      Collpase 折叠
+      <br>IE不支持
+      <details>
+        <summary>Show/Hide me</summary>
+        <p>Pellentesque habitant</p>
+      </details>
+    </div>
+    <div>
+      AutoComplete 自动完成
+      <br>future
+      <input list="browsers" name="myBrowser" />
+      <datalist id="browsers">
+        <option value="Chrome">
+          <option value="Firefox">
+            <option value="Internet Explorer">
+      </datalist>
+    </div>
+    <div>
+      右键菜单
+      <br> 仅有火狐部分支持
+      <div contextmenu="popup-menu">
+        Right-click to see the adjusted context menu
+      </div>
+      <menu type="context" id="popup-menu">
+        <menuitem type="checkbox" onclick="toggleOption()" checked="true">Checkbox</menuitem>
+        <menuitem type="command" label="Command" icon="icon.png" onclick="doSomething()">Checkbox</menuitem>
+        <menuitem type="radio" name="group1" onclick="option()" checked="true">Radio button 1</menuitem>
+        <menuitem type="radio" name="group1" onclick="option()">Radio button 2</menuitem>
+      </menu>
+    </div>
+    <script>
+      let a = document.querySelector('.alert');
+      a.addEventListener('click', () => {
+        alert('message');
+      });
+      let b = document.querySelector('.prompt');
+      b.addEventListener('click', () => {
+        prompt('message');
+      });
+      let c = document.querySelector('.dialog');
+      let d = document.querySelector('#dialog');
+      c.addEventListener('click', () => {
+        //d.show();
+        d.showModal();
+      });
+      d.addEventListener('click', (e) => {
+        e.stopPropagation();
+        d.close();
+      });
+    </script>
+  </body>
+
+</html>
