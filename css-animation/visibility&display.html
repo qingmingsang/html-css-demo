@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <link href="" rel="stylesheet">
+    <style>
+      section {
+        width: 500px;
+        height: 300px;
+        border: 1px solid lightcoral;
+        margin: 30px auto;
+      }
+
+      div {
+        width: 200px;
+        height: 200px;
+        background: lightblue;
+      }
+
+      .one {
+        opacity: 0;
+        transition: opacity 1s;
+        visibility: hidden;
+      }
+
+      .visible {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
+
+
+      .two {
+        visibility: hidden;
+        animation: out 1s;
+      }
+
+      .three {
+        opacity: 0;
+        transition: opacity 1s;
+        display: none;
+      }
+
+      .four {
+        animation: out 1s;
+        display: none;
+      }
+
+      @keyframes in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes out {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+
+  <body>
+    <section>
+      <div class='one'></div>
+      <button id='a'>click</button>
+      <br> transition:
+      <br> hidden -> visible 有效,
+      <br> visible -> hidden 无效,需要js修正
+    </section>
+    <section>
+      <div class='two'></div>
+      <button id='b'>click</button>
+      <br> animation:
+      <br> hidden -> visible 有效,
+      <br> visible -> hidden 无效,需要js修正
+    </section>
+    <section>
+      <div class='three'></div>
+      <button id='c'>click</button>
+      <br> transition:
+      <br> none -> block 无效,需要js修正,
+      <br> block -> none 无效,需要js修正
+    </section>
+    <section>
+      <div class='four'></div>
+      <button id='d'>click</button>
+      <br> animation:
+      <br> none -> block 有效,
+      <br> block -> none 无效,需要js修正
+    </section>
+    <script>
+      let one = document.querySelector('.one');
+      let two = document.querySelector('.two');
+      let three = document.querySelector('.three');
+      let four = document.querySelector('.four');
+      let a = document.querySelector('#a');
+      let b = document.querySelector('#b');
+      let c = document.querySelector('#c');
+      let d = document.querySelector('#d');
+
+      class Queue {
+        constructor() {
+          this.data = [];
+        }
+        runner() {
+          if (this.data.length > 0 && this.data[0].state != 'running') {
+            this.data[0].state = 'running';
+            this.data[0].fn();
+          }
+        }
+        inqueue(fn) {
+          this.data.push({ state: 'waiting', fn: fn });
+          this.runner();
+        }
+        dequeue() {
+          this.data.shift();
+          this.runner();
+        }
+      }
+      let oneQ = new Queue();
+      let oneStyle = window.getComputedStyle(one);
+      let oneFn = () => {
+        if (oneStyle.getPropertyValue('visibility') == 'visible') {
+          let fn = () => {
+            one.style.visibility = 'hidden';
+            one.removeEventListener('transitionend', fn);
+            oneQ.dequeue();
+          }
+          one.addEventListener('transitionend', fn);
+          one.style.opacity = 0;
+        } else if (oneStyle.getPropertyValue('visibility') == 'hidden') {
+          let fn = () => {
+            one.removeEventListener('transitionend', fn);
+            oneQ.dequeue();
+          }
+          one.addEventListener('transitionend', fn);
+          one.style.visibility = 'visible';
+          one.style.opacity = 1;
+        }
+      }
+      a.addEventListener('click', () => {
+        oneQ.inqueue(oneFn);
+      });
+
+
+      let twoQ = new Queue();
+      let twoStyle = window.getComputedStyle(two);
+      let twoFn = () => {
+        if (twoStyle.getPropertyValue('visibility') == 'visible') {
+          let fn = () => {
+            two.style.visibility = 'hidden';
+            two.removeEventListener('animationend', fn);
+            twoQ.dequeue();
+          }
+          two.addEventListener('animationend', fn);
+          two.style.animationName = 'out';
+        } else if (twoStyle.getPropertyValue('visibility') == 'hidden') {
+          let fn = () => {
+            two.removeEventListener('animationend', fn);
+            twoQ.dequeue();
+          }
+          two.addEventListener('animationend', fn);
+          two.style.visibility = 'visible';
+          two.style.animationName = 'in';
+        }
+      }
+      b.addEventListener('click', () => {
+        twoQ.inqueue(twoFn);
+      });
+
+      let threeQ = new Queue();
+      let threeStyle = window.getComputedStyle(three);
+      let threeFn = () => {
+        if (threeStyle.getPropertyValue('display') == 'block') {
+          let fn = () => {
+            three.style.display = 'none';
+            three.removeEventListener('transitionend', fn);
+            threeQ.dequeue();
+          }
+          three.addEventListener('transitionend', fn);
+          three.style.opacity = 0;
+        } else if (threeStyle.getPropertyValue('display') == 'none') {
+          let fn = () => {
+            three.removeEventListener('transitionend', fn);
+            threeQ.dequeue();
+          }
+          three.addEventListener('transitionend', fn);
+          three.style.display = 'block';
+          setTimeout(() => {
+            three.style.opacity = 1;
+          }, 50)
+        }
+      }
+      c.addEventListener('click', () => {
+        threeQ.inqueue(threeFn);
+      });
+
+      let fourQ = new Queue();
+      let fourStyle = window.getComputedStyle(four);
+      let fourFn = () => {
+        if (fourStyle.getPropertyValue('display') == 'block') {
+          let fn = () => {
+            four.style.display = 'none';
+            four.removeEventListener('animationend', fn);
+            fourQ.dequeue();
+          }
+          four.addEventListener('animationend', fn);
+          four.style.animationName = 'out';
+        } else if (fourStyle.getPropertyValue('display') == 'none') {
+          let fn = () => {
+            four.removeEventListener('animationend', fn);
+            fourQ.dequeue();
+          }
+          four.addEventListener('animationend', fn);
+          four.style.display = 'block';
+          four.style.animationName = 'in';
+        }
+      }
+      d.addEventListener('click', () => {
+        fourQ.inqueue(fourFn);
+      });
+    </script>
+  </body>
+
+</html>
