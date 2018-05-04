@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <link href="" rel="stylesheet">
+    <style>
+      input:invalid {
+        border-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form onsubmit="return false;" novalidate="true">
+      <label for="email"> 邮箱：</label>
+      <input type="email" id="email" name="email" required/>
+      <button id="submit">click</button>
+    </form>
+    <p id="tips"></p>
+    IE10+
+    <script>
+      let email = document.getElementById('email');
+      let submit = document.getElementById('submit');
+      let tips = document.getElementById('tips');
+
+      submit.addEventListener('click', () => {
+        if (email.checkValidity() && email.value.length < 13) {
+          email.setCustomValidity("好短");
+        }
+        console.log(email.checkValidity());
+        console.log(email.validity);
+        console.log(email.validationMessage);
+        console.log(email.willValidate);
+        tips.innerHTML = `校验结果:${email.checkValidity()}<br>
+        校验提示:${email.validationMessage}<br>
+        是否需要校验:${email.willValidate}<br>
+        validity相关数据:${JSON.stringify(email.validity)}`;
+      })
+
+    </script>
+    <script src="">
+    </script>
+  </body>
+
+</html>
