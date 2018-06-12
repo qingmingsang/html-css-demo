@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <link href="" rel="stylesheet">
+    <style>
+      html,
+      body {
+        background: lightblue;
+      }
+
+      .tabs {
+        width: 355px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.30);
+        border-radius: 4px 4px 0 0;
+        display: flex;
+        text-align: center;
+        line-height: 40px;
+        color: white;
+      }
+
+      .item {
+        flex: 1;
+        position: relative;
+      }
+
+      .item span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      .item.is-active {
+        color: black;
+      }
+
+      .item.left.is-active::after {
+        content: '';
+        background: white;
+        position: absolute;
+        top: -3px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: perspective(10px) rotateX(1deg);
+        transform-origin: bottom left;
+        border-radius: 4px 4px 0 0;
+      }
+
+      .item.right.is-active::after {
+        content: '';
+        background: white;
+        position: absolute;
+        top: -3px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: perspective(10px) rotateX(1deg);
+        transform-origin: bottom right;
+        border-radius: 4px 4px 0 0;
+      }
+
+      .item.top.is-active::after {
+        content: '';
+        background: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: -3px;
+        right: 0;
+        transform: perspective(10px) rotateX(-1deg);
+        transform-origin: top left;
+      }
+
+      .xx {
+        width: 50px;
+        height: 50px;
+        background-image: -webkit-radial-gradient(top right, transparent 50px, white 50px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tabs">
+      <div class="item left is-active">
+        <span>左</span>
+      </div>
+      <div class="item right">
+        <span>右</span>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="item top is-active">
+        <span>左</span>
+      </div>
+      <div class="item right">
+        <span>右</span>
+      </div>
+    </div>
+    <div class="xx"></div>
+    <script>
+      // let items = document.querySelectorAll('.item');
+      // items.forEach((v) => {
+      //   v.addEventListener('click', (e) => {
+      //     v.classList.add('is-active');
+      //     if (v.previousSibling) {
+      //       console.log(v.previousSibling)
+      //       v.previousSibling.classList.remove('is-active');
+      //     }
+      //     if (v.nextSibling) {
+      //       console.log(v.nextSibling)
+      //       v.nextSibling.classList.remove('is-active');
+      //     }
+      //   })
+      // })
+      // let a = document.querySelector('.tabs');
+      // let last;
+      // a.addEventListener('click', (e) => {
+      //   let current = e.target;
+      //   if (!last) {
+      //     last = current;
+      //     current.classList.add('is-active');
+      //   }
+      //   if (last && (!(current == last))) {
+      //     last.classList.remove('is-active');
+      //     current.classList.add('is-active');
+      //     last = current;
+      //   }
+      // })
+      let left = document.querySelector('.left');
+      let right = document.querySelector('.right');
+      left.addEventListener('click', () => {
+        left.classList.add('is-active');
+        right.classList.remove('is-active');
+      })
+      right.addEventListener('click', () => {
+        right.classList.add('is-active');
+        left.classList.remove('is-active');
+      })
+    </script>
+  </body>
+
+</html>
