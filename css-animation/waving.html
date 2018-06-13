@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <link href="" rel="stylesheet">
+    <style>
+      .a {
+        width: 300px;
+        height: 100px;
+        background: lightblue;
+        animation: wave 3s infinite;
+        transform: perspective(1000px) rotateX(-20deg);
+        transform-origin: top;
+      }
+
+      @keyframes wave {
+        0 {
+          transform: perspective(1000px) rotateX(-20deg);
+        }
+        50% {
+          transform: perspective(1000px) rotateX(20deg);
+        }
+        100% {
+          transform: perspective(1000px) rotateX(-20deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="a"></div>
+    <script>
+    </script>
+    <script src="">
+    </script>
+  </body>
+
+</html>
