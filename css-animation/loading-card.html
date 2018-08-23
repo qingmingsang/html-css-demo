@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="" rel="stylesheet">
+    <style>
+      div {
+        width: 200px;
+        height: 50px;
+        margin: 100px;
+      }
+
+      .a {
+        background-color: rgba(207, 216, 220, .3);
+        background: linear-gradient(to right, rgba(207, 216, 220, .3), rgba(207, 216, 220, .6), rgba(207, 216, 220, .3));
+        background-size: 600% 600%;
+        animation: pulse 1.4s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          background-position: 0 50%;
+          /* background-position: -50% 50%; */
+        }
+        100% {
+          background-position: 100% 50%;
+          /* background-position: 150% 50%; */
+        }
+      }
+
+      .b {
+        background-color: rgb(236, 236, 236);
+        animation: breathing 2s ease-in-out infinite;
+      }
+
+      @keyframes breathing {
+        0% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.3;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class='a'>
+    </div>
+    <div class='b'>
+    </div>
+  </body>
+
+</html>
