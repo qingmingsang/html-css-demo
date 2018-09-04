@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="" rel="stylesheet">
+    <style>
+      html,
+      body {
+        background: white;
+      }
+
+      div {
+        width: 100%;
+        height: 50px;
+        margin: 20px 0;
+      }
+
+      .aa {
+        background-image: radial-gradient(ellipse at bottom, rgba(204, 204, 204, 0.40), rgba(204, 204, 204, 0.00));
+      }
+
+      .a {
+        background-image: radial-gradient(50% 100%, rgba(204, 204, 204, 0.40) 50%, rgba(204, 204, 204, 0.00) 100%, rgba(204, 204, 204, 0.00) 100%);
+      }
+
+      .b {
+        background-image: radial-gradient(circle, lightgreen, lightcoral);
+      }
+
+      .b1 {
+        background-image: radial-gradient(circle, lightgreen 50%, lightcoral);
+      }
+
+      .b2 {
+        background-image: radial-gradient(circle, rgba(204, 204, 204, 0.40), white);
+      }
+
+      .d {
+        background-image: radial-gradient(circle closest-side, lightgreen, lightcoral);
+      }
+
+      .e {
+        background-image: radial-gradient( circle closest-corner, lightgreen, lightcoral);
+      }
+
+      .f {
+        background-image: radial-gradient( circle farthest-side, lightgreen, lightcoral);
+      }
+
+      .g {
+        background-image: radial-gradient( circle farthest-corner, lightgreen, lightcoral);
+      }
+
+      .c {
+        background-image: radial-gradient(ellipse, lightgreen, lightcoral);
+      }
+
+      .d1 {
+        background-image: radial-gradient(ellipse closest-side, lightgreen, lightcoral);
+      }
+
+      .e1 {
+        background-image: radial-gradient( ellipse closest-corner, lightgreen, lightcoral);
+      }
+
+      .f1 {
+        background-image: radial-gradient( ellipse farthest-side, lightgreen, lightcoral);
+      }
+
+      .g1 {
+        background-image: radial-gradient( ellipse farthest-corner, lightgreen, lightcoral);
+      }
+
+      .h {
+        background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #00FFFF 0%, rgba(0, 0, 255, 0) 50%, #0000FF 95%);
+      }
+
+      .i {
+        background-image: radial-gradient(ellipse farthest-corner at 470px 47px, #FFFF80 20%, rgba(204, 153, 153, 0.4) 30%, #E6E6FF 60%);
+      }
+
+      .j {
+        background-image: radial-gradient(farthest-corner at 45px 45px, #FF0000 0%, #0000FF 100%);
+      }
+
+      .k {
+        background-image: radial-gradient(16px at 60px 50%, #000000 0%, #000000 14px, rgba(0, 0, 0, 0.3) 18px, rgba(0, 0, 0, 0) 19px);
+      }
+
+      .l {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(at bottom left, white 60%, green 60%);
+      }
+
+      .one {
+        width: 200px;
+        height: 100px;
+        background: red;
+        position: relative;
+      }
+
+      .one:after {
+        content: '';
+        position: absolute;
+        height: 10px;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        background: radial-gradient(20px 15px ellipse at top, red 10px, transparent 11px);
+        background-size: 20px 10px;
+      }
+
+      .two {
+        position: relative;
+        width: 262px;
+        height: 262px;
+        border-radius: 50%;
+        background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0, linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%, repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+        background-size: 50% 100%, 100% 50%, 100% 100%;
+      }
+
+      .two:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -35px;
+        border: solid 1px #d9a388;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px #da5b33, inset 0 0 0 27px #da5b33;
+        background: #b5ac9a;
+        content: '';
+      }
+    </style>
+  </head>
+
+  <body>
+    background: radial-gradient(shape size at position, start-color, ..., last-color);
+    <div class="aa"></div>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="b1"></div>
+    <div class="b2"></div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <div class="f"></div>
+    <div class="g"></div>
+    <div class="d1"></div>
+    <div class="e1"></div>
+    <div class="f1"></div>
+    <div class="g1"></div>
+    <div class="h"></div>
+    <div class="i"></div>
+    <div class="j"></div>
+    <div class="k"></div>
+    <div class="l"></div>
+    <div class="one"></div>
+    <div class="two"></div>
+    <script>
+    </script>
+    <script src="">
+    </script>
+  </body>
+
+</html>
