@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .tip {
+        font-size: 16px;
+        border-left-color: #3c763d;
+        background-color: rgba(241, 249, 241, .83);
+        padding: 12px 24px 12px 20px;
+        margin: 2em 0;
+        border-left: 4px solid;
+        position: relative;
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        width: 200px;
+      }
+
+      .tip::before {
+        content: "!";
+        position: absolute;
+        top: 14px;
+        left: -12px;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 20px;
+        font-weight: 700;
+        background-color: #3c763d;
+        font-family: Dosis, Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="tip">提示内容提示内容提示内容提示内容</p>
+    <script>
+    </script>
+  </body>
+
+</html>
