@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 默认使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <link href="" rel="stylesheet">
+    <style>
+      #ball {
+        position: absolute;
+        left: 150px;
+        top: 100px;
+        width: 30px;
+        height: 30px;
+        background: red;
+        border-radius: 50%;
+        transform-origin: 0 100px;
+        transform: rotate(0deg);
+      }
+
+      #block {
+        position: absolute;
+        left: 300;
+        top: 150;
+        width: 100px;
+        height: 100px;
+        background: red;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="ball"></div>
+    <div id="block"></div>
+    <div id="xx">123</div>
+    <script>
+
+      requestAnimationFrame(function update() {
+        let p = (Date.now() - startTime) / 2000
+
+        ball.style.transform = `rotate(${-360 * p}deg)`
+        requestAnimationFrame(update)
+      })
+
+      let startTime = Date.now();
+      requestAnimationFrame(function update() {
+        let p = (Date.now() - startTime) / 5000;
+        if (p > 1) {
+          startTime = Date.now();
+        }
+        p = Math.min(p, 1.0)
+        let red = Math.round(255 * (1 - p));
+        let blue = Math.round(255 * p);
+
+        block.style.backgroundColor = `rgb(${red},0,${blue})`
+
+        // if (p < 1.0) {
+        requestAnimationFrame(update)
+        // }
+      })
+      console.log(xx)
+      xx.style.color = 'green';
+    </script>
+  </body>
+
+</html>
